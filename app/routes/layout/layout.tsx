@@ -9,7 +9,7 @@ const LayoutPage = () => {
         <Header />
       </header>
 
-      <main className='flex-8 overflow-auto'>
+      <main className='flex-18 overflow-auto'>
         <Outlet />
       </main>
 
