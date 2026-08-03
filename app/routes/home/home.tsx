@@ -2,6 +2,7 @@ import AnimatedContent from '~/components/AnimatedContent';
 import type { Route } from './+types/home';
 import BlurText from '~/components/BlurText';
 import BorderGlow from '~/components/BorderGlow';
+import TiltedCard from '~/components/TiltedCard';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -74,11 +75,29 @@ export default function Home() {
           className='absolute  scale-200'
         />
         <BorderGlow className='relative  h-4/5 rounded-lg'>
-          <img
+          <TiltedCard
+            imageSrc='/images/profile.jpg'
+            altText='Berserk'
+            captionText='Berserk'
+            containerHeight='100%'
+            containerWidth='320px'
+            imageHeight='100%'
+            imageWidth='320px'
+            rotateAmplitude={12}
+            scaleOnHover={1.05}
+            showMobileWarning={false}
+            showTooltip
+            displayOverlayContent
+            overlayContent={
+              <p className='tilted-card-demo-text'>Berserk</p>
+            }
+          />
+
+          {/* <img
             src='/images/profile.jpg'
             alt='img'
             className='relative h-full rounded-lg object-cover'
-          />
+          /> */}
         </BorderGlow>
       </div>
     </div>
