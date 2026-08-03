@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+* {
+  cursor: none !important;
+}
 
 @theme {
   --font-sans:
@@ -11,7 +14,7 @@
   --color-foreground: #f8fafc;
   --color-text-foreground: #90a1b9;
   --color-link-forward: #ffa1ad;
-  --color-link-hover-forward: #FFCCD2;
+  --color-link-hover-forward: #ffccd2;
 }
 
 html,
