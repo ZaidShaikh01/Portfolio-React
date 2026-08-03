@@ -4,18 +4,20 @@ import Header from '~/components/Header';
 
 const LayoutPage = () => {
   return (
-    <div className='flex flex-col h-185 border rounded-xl bg-background border-stroke m-10 '>
-      <header className='flex-1'>
-        <Header />
-      </header>
+    <div className='flex p-10  h-screen'>
+      <div className='flex flex-col w-full h-full border rounded-xl bg-background border-stroke'>
+        <header>
+          <Header />
+        </header>
 
-      <main className='flex-18 overflow-auto'>
-        <Outlet />
-      </main>
+        <main className='flex-1 overflow-auto  h-full'>
+          <Outlet />
+        </main>
 
-      <footer className='flex-1'>
-        <Footer />
-      </footer>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
     </div>
   );
 };
