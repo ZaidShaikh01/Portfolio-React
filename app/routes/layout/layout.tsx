@@ -10,7 +10,7 @@ const LayoutPage = () => {
           <Header />
         </header>
 
-        <main className='flex-1 overflow-hidden  h-full'>
+        <main className='flex-1 overflow-auto md:overflow-hidden  h-full'>
           <Outlet />
         </main>
 

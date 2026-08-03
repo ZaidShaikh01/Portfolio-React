@@ -2,8 +2,8 @@ import { FaTwitter, FaFacebook, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <div className='flex  justify-between border-t border-t-stroke'>
-      <div className='flex'>
+    <div className='flex  md:justify-between border-t border-t-stroke'>
+      <div className='flex '>
         <p className='p-3 text-sm text-text-foreground'>Find me in: </p>
         <p className='p-3 cursor-pointer text-lg border-l border-l-stroke text-text-foreground'>
           <FaLinkedinIn />
@@ -15,7 +15,7 @@ const Footer = () => {
           <FaTwitter />
         </p>
       </div>
-      <div className='menu-item'>
+      <div className='hidden md:block'>
         <p className='p-3 cursor-pointer text-sm border-l border-l-stroke text-text-foreground'>
           @ZaidShaikh01
         </p>
