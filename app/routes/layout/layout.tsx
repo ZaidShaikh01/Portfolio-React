@@ -7,22 +7,22 @@ import { SmoothCursor } from '~/components/SmoothCursor';
 const LayoutPage = () => {
   return (
     <div className='flex p-10 cursor-none  h-screen'>
-      <div className='flex flex-col w-full h-full border rounded-xl bg-background border-stroke'>
-        <header>
-          <Header />
-        </header>
+      <ClickSpark>
+        <div className='flex flex-col w-full h-full border rounded-xl bg-background border-stroke'>
+          <header>
+            <Header />
+          </header>
 
-        <main className='flex-1 overflow-auto md:overflow-hidden  h-full'>
-          <ClickSpark>
+          <main className='flex-1 overflow-auto md:overflow-hidden  h-full'>
             <SmoothCursor />
             <Outlet />
-          </ClickSpark>
-        </main>
+          </main>
 
-        <footer>
-          <Footer />
-        </footer>
-      </div>
+          <footer>
+            <Footer />
+          </footer>
+        </div>
+      </ClickSpark>
     </div>
   );
 };

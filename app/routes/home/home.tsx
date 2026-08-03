@@ -84,7 +84,7 @@ export default function Home() {
             imageHeight='100%'
             imageWidth='320px'
             rotateAmplitude={12}
-            scaleOnHover={1.05}
+            scaleOnHover={1}
             showMobileWarning={false}
             showTooltip
             displayOverlayContent
