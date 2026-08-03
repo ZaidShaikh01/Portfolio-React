@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className='flex justify-center items-center  gap-55 p-19 h-full w-full'>
       {/* About Container */}
-      <div className='flex flex-col gap-12'>
+      <div className='flex flex-col  gap-12'>
         {/* Introduction container */}
         <div className=''>
           <p className='text-l text-text-foreground  '>Hi all. I am</p>
@@ -31,7 +31,7 @@ export default function Home() {
           <p className='text-l text-text-foreground'>
             // find my profile on Github:{' '}
           </p>
-          <p className='flex gap-1'>
+          <p className='flex bg gap-1'>
             <span className='text-l text-indigo-500'>const</span>
             <span className='text-teal-400'>githubLink</span>
             <span className='text-foreground'>=</span>
@@ -42,11 +42,16 @@ export default function Home() {
         </div>
       </div>
       {/* Snake Game */}
-      <div className='h-full '>
+      <div className='relative flex items-center justify-center h-full'>
+        <img
+          src='/images/background_blurs.png'
+          alt='background_blurs'
+          className='absolute scale-200'
+        />
         <img
           src='/images/profile.jpg'
           alt='img'
-          className='h-full  rounded-lg object-cover'
+          className='relative h-4/5 rounded-lg object-cover'
         />
       </div>
     </div>
