@@ -1,7 +1,15 @@
+import FileTree2 from '../../components/FileTree';
+import PageItems from './page-items';
+import PersonalInfo from './personal-info';
+
 const AboutPage = () => {
-    return ( <h1>
-        Hi from about page
-    </h1> );
-}
- 
+  const fileTreeData = [];
+  return (
+    <div className='h-full w-full flex '>
+      <PageItems />
+      <PersonalInfo />
+    </div>
+  );
+};
+
 export default AboutPage;
