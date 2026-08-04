@@ -8,53 +8,12 @@ import {
 import FileTree2 from '~/components/FileTree';
 import { useState } from 'react';
 
+import { personalFileTreeData } from '~/data/personal';
+import { contactFileTreeData } from '~/data/contact';
+
 const PageItems = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [isContactOpen, setIsContactOpen] = useState(true);
-
-  type FileTreeItem = {
-    name: string;
-    type: 'folder' | 'file';
-    children?: FileTreeItem[];
-  };
-
-  const personalFileTreeData: FileTreeItem[] = [
-    {
-      name: 'bio',
-      type: 'folder',
-      children: [
-        { name: 'index.html', type: 'file' },
-        { name: 'favicon.ico', type: 'file' },
-      ],
-    },
-    {
-      name: 'interests',
-      type: 'folder',
-      children: [
-        { name: 'index.html', type: 'file' },
-        { name: 'favicon.ico', type: 'file' },
-      ],
-    },
-    {
-      name: 'education',
-      type: 'folder',
-      children: [
-        { name: 'index.html', type: 'file' },
-        { name: 'favicon.ico', type: 'file' },
-      ],
-    },
-  ];
-
-  const contactFileTreeData: FileTreeItem[] = [
-    {
-      name: 'szaid516@gmail.com',
-      type: 'file',
-    },
-    {
-      name: '+91-8208900954',
-      type: 'file',
-    },
-  ];
 
   const accordian = [
     {
