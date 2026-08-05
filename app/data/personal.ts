@@ -1,11 +1,12 @@
 import type { FileTreeItem } from '~/types/fileTreeItem';
+import { demoData } from './about/demo';
 
 export const personalFileTreeData: FileTreeItem[] = [
   {
     name: 'bio',
     type: 'folder',
     children: [
-      { name: 'index.html', type: 'file' },
+      { name: 'demo.ts', type: 'file', data: demoData },
       { name: 'favicon.ico', type: 'file' },
     ],
   },

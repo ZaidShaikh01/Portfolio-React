@@ -5,7 +5,9 @@ import { demoData } from '~/data/about/demo';
 import type { AboutData } from '~/types/aboutData';
 
 const DetailsTab = () => {
-  const [aboutData, setAboutData] = useState(demoData);
+    // This is for list of tabs
+  const [aboutData, setAboutData] = useState([]);
+
   const handleOnClick = (currentItem: AboutData) => {
     setAboutData(
       aboutData.filter((item) => {

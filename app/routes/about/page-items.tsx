@@ -10,8 +10,14 @@ import { useState } from 'react';
 
 import { personalFileTreeData } from '~/data/personal';
 import { contactFileTreeData } from '~/data/contact';
+import type { AboutData } from '~/types/aboutData';
 
-const PageItems = () => {
+
+type pageItemsProps = {
+  setSection: (data: AboutData) => void;
+};
+
+const PageItems = ({ setSection }: pageItemsProps) => {
   const [isOpen, setIsOpen] = useState(true);
   const [isContactOpen, setIsContactOpen] = useState(true);
 
@@ -21,6 +27,7 @@ const PageItems = () => {
       isOpen: isOpen,
       onClick: () => setIsOpen((prev) => !prev),
       fileTreeData: personalFileTreeData,
+      
     },
     {
       name: 'Contact-info',
@@ -54,7 +61,10 @@ const PageItems = () => {
             <div
               className={`${item.isOpen ? '' : 'hidden'} border-b border-b-stroke pb-1`}
             >
-              <FileTree2 fileTreeData={item.fileTreeData} />
+              <FileTree2
+                onItemSelected={setSection}
+                fileTreeData={item.fileTreeData}
+              />
             </div>
           </div>
         ))}
