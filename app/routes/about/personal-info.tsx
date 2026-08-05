@@ -1,5 +1,15 @@
+import DetailsTab from '~/components/DetailsTabs';
+
 const PersonalInfo = () => {
-  return <h1>Personal Info</h1>;
+  return (
+    <div className='flex flex-col w-full'>
+      {/* Tabs section */}
+      <DetailsTab />
+
+      {/* About Area */}
+      
+    </div>
+  );
 };
 
 export default PersonalInfo;
