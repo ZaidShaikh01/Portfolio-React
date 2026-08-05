@@ -74,7 +74,7 @@ export default function Home() {
           alt='background_blurs'
           className='absolute  scale-200'
         />
-        <BorderGlow className='relative  h-4/5 rounded-lg'>
+        <BorderGlow className='relative overflow-hidden h-4/5 rounded-lg'>
           <TiltedCard
             imageSrc='/images/profile.jpg'
             altText='Berserk'
