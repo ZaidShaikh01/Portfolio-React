@@ -1,7 +1,5 @@
-import { div, h1 } from 'motion/react-client';
-import { useState } from 'react';
+
 import { FaX } from 'react-icons/fa6';
-import { demoData } from '~/data/about/demo';
 import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
 
@@ -26,7 +24,7 @@ const DetailsTab = ({ tabs, onTabSelect, onTabRemove }: DetailsTabProp) => {
 
             className='p-3 text-sm text-gray-300 flex justify-between items-center w-50 h-full border-r border-r-stroke '
           >
-            <button onClick={() => onTabSelect(item)}>
+            <button className='flex-1' onClick={() => onTabSelect(item)}>
               {item.section.tabName}
             </button>
             <button

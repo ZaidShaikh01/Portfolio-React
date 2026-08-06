@@ -1,7 +1,5 @@
 import DetailsTab from '~/components/DetailsTabs';
 import AboutDetailsArea from './about-details-area';
-import { useState } from 'react';
-import { demoData } from '~/data/about/demo';
 import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
 

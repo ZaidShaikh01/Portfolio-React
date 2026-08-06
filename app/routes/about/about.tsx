@@ -1,4 +1,3 @@
-import { demoData } from '~/data/about/demo';
 import PageItems from './page-items';
 import PersonalInfo from './personal-info';
 import { useState } from 'react';
