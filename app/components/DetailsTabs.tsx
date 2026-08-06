@@ -3,32 +3,44 @@ import { useState } from 'react';
 import { FaX } from 'react-icons/fa6';
 import { demoData } from '~/data/about/demo';
 import type { AboutData } from '~/types/aboutData';
+import type { Tab } from '~/types/Tabs';
 
-const DetailsTab = () => {
-    // This is for list of tabs
-  const [aboutData, setAboutData] = useState([]);
+type DetailsTabProp = {
+  tabs: Tab[] | null;
+  onTabSelect: (tab: Tab) => void;
+};
 
-  const handleOnClick = (currentItem: AboutData) => {
-    setAboutData(
-      aboutData.filter((item) => {
-        return item !== currentItem ? item : false;
-      }),
-    );
+const DetailsTab = ({ tabs, onTabSelect }: DetailsTabProp) => {
+  console.log('Here in Details Tab ', tabs);
+
+  const handleOnClick = (currentItem: Tab) => {
+    // if (tabs) {
+    //   setTabs(
+    //     tabs.filter((item) => {
+    //       return item !== currentItem ? item : false;
+    //     }),
+    //   );
+    // }
   };
-  if (aboutData.length === 0) {
+
+  if (!tabs || tabs.length === 0) {
     return null;
   }
+  
   return (
     <div>
       <div className='flex border-b border-b-stroke w-full'>
         {/* A single tab */}
-        {aboutData.map((item) => (
-          <div className='p-3 text-sm text-gray-300 flex justify-between items-center w-50 h-full border-r border-r-stroke '>
-            <span>{item.tabName}</span>
+        {tabs.map((item) => (
+          <button
+            onClick={() => onTabSelect(item)}
+            className='p-3 text-sm text-gray-300 flex justify-between items-center w-50 h-full border-r border-r-stroke '
+          >
+            <span>{item.section.tabName}</span>
             <button className='border-none' onClick={() => handleOnClick(item)}>
               <FaX />
             </button>
-          </div>
+          </button>
         ))}
       </div>
     </div>

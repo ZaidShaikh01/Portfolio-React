@@ -12,7 +12,6 @@ import { personalFileTreeData } from '~/data/personal';
 import { contactFileTreeData } from '~/data/contact';
 import type { AboutData } from '~/types/aboutData';
 
-
 type pageItemsProps = {
   setSection: (data: AboutData) => void;
 };
@@ -27,7 +26,6 @@ const PageItems = ({ setSection }: pageItemsProps) => {
       isOpen: isOpen,
       onClick: () => setIsOpen((prev) => !prev),
       fileTreeData: personalFileTreeData,
-      
     },
     {
       name: 'Contact-info',
@@ -49,7 +47,7 @@ const PageItems = ({ setSection }: pageItemsProps) => {
 
       <div className='w-52 border-r border-r-stroke '>
         {accordian.map((item) => (
-          <div className='personal-accordian'>
+          <div key={item.name} className='personal-accordian'>
             <button
               className='w-full flex items-center p-3 gap-1 text-sm text-gray-300 border-b border-b-stroke'
               onClick={item.onClick}

@@ -1,4 +1,6 @@
+import type { AboutData } from "./aboutData";
+
 export type Tab = {
-  id: string;
-  title: string;
+  id: number;
+  section: AboutData;
 };
