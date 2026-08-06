@@ -1,6 +1,7 @@
 import PageItems from './page-items';
 import PersonalInfo from './personal-info';
 import { useState } from 'react';
+import BlurText from '~/components/BlurText';
 import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
 
@@ -48,13 +49,13 @@ const AboutPage = () => {
 
   return (
     <div className='h-full w-full flex '>
-      
       <PageItems setSection={handleSection} />
 
       {!section ? (
-        <p className='w-full h-full flex justify-center items-center text-6xl text-gray-300'>
-          Select a section.
-        </p>
+        <BlurText
+          text='Select a section.'
+          className='w-full h-full flex justify-center items-center text-6xl text-gray-300'
+        />
       ) : (
         <PersonalInfo
           tabs={tabs}
