@@ -15,7 +15,6 @@ const AboutPage = () => {
   const [tabs, setTabs] = useState<Tab[] | null>(null);
 
   const handleSection = (data: AboutData) => {
-    console.log(data.tabName);
     setSection(data);
 
     setTabs([
@@ -32,8 +31,25 @@ const AboutPage = () => {
     setSection(tab.section);
   };
 
+  const onTabRemove = (tab: Tab) => {
+    if (tabs) {
+      let newTabs = [];
+      newTabs = tabs.filter((item) => {
+        return item !== tab;
+      });
+      if (newTabs.length === 0) {
+        setSection(null);
+        setTabs(null);
+      } else {
+        setSection(newTabs[newTabs.length - 1].section);
+        setTabs(newTabs);
+      }
+    }
+  };
+
   return (
     <div className='h-full w-full flex '>
+      
       <PageItems setSection={handleSection} />
 
       {!section ? (
@@ -45,6 +61,7 @@ const AboutPage = () => {
           tabs={tabs}
           section={section}
           setTabSection={onTabSelect}
+          onTabRemove={onTabRemove}
         />
       )}
     </div>

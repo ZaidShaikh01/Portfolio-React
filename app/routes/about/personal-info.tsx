@@ -9,21 +9,19 @@ type PersonalInfoProps = {
   section: AboutData;
   tabs: Tab[]|null;
   setTabSection:(tab:Tab)=>void
+  onTabRemove:(tab:Tab)=>void
 };
 
-let nextTab = 0;
 
-const PersonalInfo = ({ section, tabs,setTabSection }: PersonalInfoProps) => {
-  console.log('Here in Personal-info',tabs);
-  const handleTabSelect = (tab: Tab) => {
-    
-  };
+const PersonalInfo = ({ section, tabs,setTabSection,onTabRemove }: PersonalInfoProps) => {
+ console.log('Set Section ',section.details);
+  
 
   return (
     <div className='flex flex-col w-full h-full'>
       {/* Tabs section */}
       {/* I need to pass the tabs list and event handler thats it */}
-      <DetailsTab tabs={tabs} onTabSelect={setTabSection}  />
+      <DetailsTab tabs={tabs} onTabSelect={setTabSection}  onTabRemove={onTabRemove}/>
 
       {/* About Area */}
       <AboutDetailsArea section={section} />
