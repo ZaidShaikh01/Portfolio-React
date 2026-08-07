@@ -4,13 +4,17 @@ import { FaAngleDown, FaAngleRight } from 'react-icons/fa6';
 const ProjectPage = () => {
   const [isOpen, setIsOpen] = useState(true);
 
+  const handleClick = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
-    <div>
-      <div className='project-items'>
+    <div className='flex w-full h-full'>
+      <div className='w-45 border-r border-r-stroke'>
         <div className='personal-accordian'>
           <button
             className='w-full flex items-center p-3 gap-1 text-sm text-gray-300 border-b border-b-stroke'
-            // onClick={onClick}
+            onClick={handleClick}
           >
             {' '}
             {isOpen ? <FaAngleDown /> : <FaAngleRight />}
