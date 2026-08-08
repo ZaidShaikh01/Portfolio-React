@@ -8,6 +8,16 @@ const ProjectPage = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const technologies = [
+    'React',
+    'HTML',
+    'CSS',
+    'Vue',
+    'Angular',
+    'Gatsby',
+    'Flutter',
+  ];
+
   return (
     <div className='flex w-full h-full'>
       <div className='w-45 border-r border-r-stroke'>
@@ -22,7 +32,19 @@ const ProjectPage = () => {
           </button>
           <div
             className={`${isOpen ? '' : 'hidden'} border-b border-b-stroke pb-1`}
-          ></div>
+          >
+            {technologies.map((tech) => (
+              <div
+                key={tech}
+                className='flex gap-2 items-center justify-start p-2'
+              >
+                <input type='checkbox' name={tech} id={tech} />
+                <label className='text-gray-400 ml-4' htmlFor={tech}>
+                  {tech}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className='project-container'></div>
