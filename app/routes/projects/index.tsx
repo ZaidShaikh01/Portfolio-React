@@ -1,11 +1,53 @@
 import { useState } from 'react';
-import { FaAngleDown, FaAngleRight } from 'react-icons/fa6';
+import PageItems from './page-items';
+import type { Tab } from '~/types/Tabs';
+import type { ProjectData } from '~/types/ProjectData';
+import DetailsTab from '~/components/DetailsTabs';
+
+// Crating Id for the tabs
+let nextTab = 0;
 
 const ProjectPage = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  // A single particular section
+  const [section, setSection] = useState<ProjectData | null>(null);
 
-  const handleClick = () => {
-    setIsOpen((prev) => !prev);
+  // I need to handle tabs here only
+  const [tabs, setTabs] = useState<Tab[] | null>(null);
+
+  const handleSection = (data: ProjectData) => {
+console.log(data);
+
+    setSection(data);
+
+    setTabs([
+      ...(tabs || []),
+      {
+        id: nextTab++,
+        section: data,
+      },
+    ]);
+  };
+
+  console.log(tabs);
+
+  const onTabSelect = (tab: Tab) => {
+    setSection(tab.section);
+  };
+
+  const onTabRemove = (tab: Tab) => {
+    if (tabs) {
+      let newTabs = [];
+      newTabs = tabs.filter((item) => {
+        return item !== tab;
+      });
+      if (newTabs.length === 0) {
+        setSection(null);
+        setTabs(null);
+      } else {
+        setSection(newTabs[newTabs.length - 1].section);
+        setTabs(newTabs);
+      }
+    }
   };
 
   const technologies = [
@@ -20,34 +62,19 @@ const ProjectPage = () => {
 
   return (
     <div className='flex w-full h-full'>
-      <div className='w-45 border-r border-r-stroke'>
-        <div className='personal-accordian'>
-          <button
-            className='w-full flex items-center p-3 gap-1 text-sm text-gray-300 border-b border-b-stroke'
-            onClick={handleClick}
-          >
-            {' '}
-            {isOpen ? <FaAngleDown /> : <FaAngleRight />}
-            {'Personal'}
-          </button>
-          <div
-            className={`${isOpen ? '' : 'hidden'} border-b border-b-stroke pb-1`}
-          >
-            {technologies.map((tech) => (
-              <div
-                key={tech}
-                className='flex gap-2 items-center justify-start p-2'
-              >
-                <input type='checkbox' name={tech} id={tech} />
-                <label className='text-gray-400 ml-4' htmlFor={tech}>
-                  {tech}
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Left side container */}
+      <PageItems technologies={technologies} handleSection={handleSection} />
+
+      {/* Project Container */}
+      <div className='project-container'>
+        {
+          <DetailsTab
+            onTabRemove={onTabRemove}
+            onTabSelect={onTabSelect}
+            tabs={tabs}
+          />
+        }
       </div>
-      <div className='project-container'></div>
     </div>
   );
 };

@@ -1,6 +1,4 @@
-
 import { FaX } from 'react-icons/fa6';
-import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
 
 type DetailsTabProp = {
