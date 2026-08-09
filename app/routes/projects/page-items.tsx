@@ -5,10 +5,9 @@ import type { Tab } from '~/types/Tabs';
 
 type PageItemsProps = {
   technologies: string[];
-  handleSection: (data: ProjectData) => void;
 };
 
-const PageItems = ({ technologies, handleSection }: PageItemsProps) => {
+const PageItems = ({ technologies }: PageItemsProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClick = () => {
@@ -33,12 +32,7 @@ const PageItems = ({ technologies, handleSection }: PageItemsProps) => {
               key={tech}
               className='flex gap-2 items-center justify-start p-2'
             >
-              <input
-                type='checkbox'
-                name={tech}
-                id={tech}
-                onChange={() => handleSection}
-              />
+              <input type='checkbox' name={tech} id={tech} />
               <label className='text-gray-400 ml-4' htmlFor={tech}>
                 {tech}
               </label>

@@ -5,50 +5,9 @@ import type { ProjectData } from '~/types/ProjectData';
 import DetailsTab from '~/components/DetailsTabs';
 
 // Crating Id for the tabs
-let nextTab = 0;
+
 
 const ProjectPage = () => {
-  // A single particular section
-  const [section, setSection] = useState<ProjectData | null>(null);
-
-  // I need to handle tabs here only
-  const [tabs, setTabs] = useState<Tab[] | null>(null);
-
-  const handleSection = (data: ProjectData) => {
-console.log(data);
-
-    setSection(data);
-
-    setTabs([
-      ...(tabs || []),
-      {
-        id: nextTab++,
-        section: data,
-      },
-    ]);
-  };
-
-  console.log(tabs);
-
-  const onTabSelect = (tab: Tab) => {
-    setSection(tab.section);
-  };
-
-  const onTabRemove = (tab: Tab) => {
-    if (tabs) {
-      let newTabs = [];
-      newTabs = tabs.filter((item) => {
-        return item !== tab;
-      });
-      if (newTabs.length === 0) {
-        setSection(null);
-        setTabs(null);
-      } else {
-        setSection(newTabs[newTabs.length - 1].section);
-        setTabs(newTabs);
-      }
-    }
-  };
 
   const technologies = [
     'React',
@@ -60,20 +19,37 @@ console.log(data);
     'Flutter',
   ];
 
+
+
   return (
     <div className='flex w-full h-full'>
       {/* Left side container */}
-      <PageItems technologies={technologies} handleSection={handleSection} />
+      <PageItems technologies={technologies} />
 
       {/* Project Container */}
-      <div className='project-container'>
-        {
-          <DetailsTab
-            onTabRemove={onTabRemove}
-            onTabSelect={onTabSelect}
-            tabs={tabs}
-          />
-        }
+      <div className='p-10'>
+        {/* Details Tab will be here */}
+
+        {/* Projects Details will be here */}
+        <div className="flex flex-col gap-2">
+            {/* Label Text */}
+            <p>
+              <span className="text-indigo-500 mr-1">Project 1</span>
+              <span className="text-gray-400">// _ui-animations</span>
+            </p>
+            {/* Actual Project Container */}
+            <div className="w-90 bg-black  rounded-2xl">
+              <div className="upper-image">
+                <img src="/images/image.png" alt="project-image" className='w-full object-cover' />
+              </div>
+               <div className="m-6 flex flex-col justify-start items-start gap-4">
+                <p className="text-gray-400 text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, nesciunt natus velit repellat delectus, </p>
+                <button className="p-2 text-sm bg-stroke rounded-xl">
+                  View-project
+                </button>
+               </div>
+            </div>
+        </div>
       </div>
     </div>
   );
