@@ -5,9 +5,8 @@
 }
 
 ::-webkit-scrollbar {
-   width: 10px;
-  border-left: 1px solid;
-  border-left-color: #314158;
+   width: 1px;
+
   
 }
 ::-webkit-scrollbar-track {

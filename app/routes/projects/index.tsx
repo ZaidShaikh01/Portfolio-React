@@ -24,11 +24,11 @@ const ProjectPage = () => {
       <PageItems technologies={technologies} />
 
       {/* Project Container */}
-      <div className='p-10 w-full relative o'>
+      <div className='p-10 w-full relative'>
         {/* Details Tab will be here */}
 
         {/* Projects Details will be here */}
-        <div className='grid grid-cols-3 gap-6 w-full h-full '>
+        <div className='grid grid-cols-3 gap-6 w-full h-full overflow-y-auto '>
           <div className='flex flex-col gap-2'>
             {/* Label Text */}
             <p>
