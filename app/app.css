@@ -4,6 +4,26 @@
   cursor: none !important;
 }
 
+::-webkit-scrollbar {
+   width: 10px;
+  border-left: 1px solid;
+  border-left-color: #314158;
+  
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
 @theme {
   --font-sans: 'Fira Code', monospace;
 
