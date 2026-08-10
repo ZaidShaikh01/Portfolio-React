@@ -17,14 +17,20 @@ const ProjectPage = () => {
     'Angular',
     'Gatsby',
     'Flutter',
-  ];
+  ]
+
+  // I will try to set selected option from the option thing
+  const [selectedOption,setSelectedOption] = useState<string[]>([]);
+
+
+  console.log(selectedOption);
 
   const projectsData = projectDemo;
 
   return (
     <div className='flex w-full h-full'>
       {/* Left side container */}
-      <PageItems technologies={technologies} />
+      <PageItems setSelectedOptions={setSelectedOption} technologies={technologies} />
 
       {/* Project Container */}
       <div className='p-10 w-full relative'>

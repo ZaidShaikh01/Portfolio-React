@@ -5,9 +5,10 @@ import type { Tab } from '~/types/Tabs';
 
 type PageItemsProps = {
   technologies: string[];
+  setSelectedOptions: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
-const PageItems = ({ technologies }: PageItemsProps) => {
+const PageItems = ({ technologies, setSelectedOptions }: PageItemsProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClick = () => {
@@ -32,7 +33,21 @@ const PageItems = ({ technologies }: PageItemsProps) => {
               key={tech}
               className='flex gap-2 items-center justify-start p-2'
             >
-              <input type='checkbox' name={tech} id={tech} />
+              <input
+                type='checkbox'
+                name={tech}
+                id={tech}
+                value={tech}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setSelectedOptions((prev) => [...prev, e.target.value]);
+                  } else {
+                    setSelectedOptions((prev) =>
+                      prev.filter((item) => item !== e.target.value),
+                    );
+                  }
+                }}
+              />
               <label className='text-gray-400 ml-4' htmlFor={tech}>
                 {tech}
               </label>
