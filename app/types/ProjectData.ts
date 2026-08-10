@@ -1,7 +1,6 @@
 export type ProjectData = {
-  tabName: string;
+  projectType: string;
+  projectName: string;
   summary: string;
-  details: string;
-  downloadText: string;
   imgUrl: string;
 };
