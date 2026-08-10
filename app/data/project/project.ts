@@ -4,61 +4,61 @@ export const projectDemo:ProjectData[]   =   [
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React','Vue','CSS','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React','Vue','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React','CSS','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React','Vue','CSS','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['Vue','CSS','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React','Vue','CSS','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React','Vue','CSS','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React','Vue','CSS','Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['Flutter'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 {
     imgUrl:'/images/image.png',
     projectName:'_ui-animations',
-    projectType:'React',
+    projectType:['React'],
     summary:'Duis aute irure dolor in velit esse cillum dolore.'
 },
 ]

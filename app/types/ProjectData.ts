@@ -1,5 +1,5 @@
 export type ProjectData = {
-  projectType: string;
+  projectType: string[];
   projectName: string;
   summary: string;
   imgUrl: string;

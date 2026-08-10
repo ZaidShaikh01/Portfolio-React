@@ -17,20 +17,26 @@ const ProjectPage = () => {
     'Angular',
     'Gatsby',
     'Flutter',
-  ]
+  ];
 
   // I will try to set selected option from the option thing
-  const [selectedOption,setSelectedOption] = useState<string[]>([]);
-
+  const [selectedOption, setSelectedOption] = useState<string[]>([]);
 
   console.log(selectedOption);
 
   const projectsData = projectDemo;
 
+  const filteredProjectData = projectsData.filter((project) => {
+    return selectedOption.every((tech) => project.projectType.includes(tech));
+  });
+
   return (
     <div className='flex w-full h-full'>
       {/* Left side container */}
-      <PageItems setSelectedOptions={setSelectedOption} technologies={technologies} />
+      <PageItems
+        setSelectedOptions={setSelectedOption}
+        technologies={technologies}
+      />
 
       {/* Project Container */}
       <div className='p-10 w-full relative'>
@@ -39,11 +45,11 @@ const ProjectPage = () => {
         {/* Projects Details will be here */}
 
         <div className='grid grid-cols-3  gap-6 w-full h-full overflow-y-auto '>
-          {projectsData.map((project,i) => (
+          {filteredProjectData.map((project, i) => (
             <div className='flex flex-col gap-2'>
               {/* Label Text */}
               <p>
-                <span className='text-indigo-500 mr-1'>Project {i+1} </span>
+                <span className='text-indigo-500 mr-1'>Project {i + 1} </span>
                 <span className='text-gray-400'>// {project.projectName}</span>
               </p>
               {/* Actual Project Container */}
