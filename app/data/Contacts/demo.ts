@@ -1,7 +1,7 @@
 import type { AboutData } from '~/types/aboutData';
 
 export const linkedInData: AboutData = {
-  tabName: 'education',
+  tabName: 'LinkedIn',
   summary:
     'Computer Science student with a strong interest in frontend development, problem solving, and building user-friendly web applications.',
   details:
@@ -11,7 +11,7 @@ export const linkedInData: AboutData = {
 };
 
 export const githubData: AboutData = {
-  tabName: 'interests',
+  tabName: 'GitHub',
   summary:
     'Passionate about web development, UI design, sketching, fitness, and creating meaningful digital experiences.',
   details:
@@ -21,7 +21,7 @@ export const githubData: AboutData = {
 };
 
 export const instaData: AboutData = {
-  tabName: 'interests',
+  tabName: 'Instagram',
   summary:
     'Passionate about web development, UI design, sketching, fitness, and creating meaningful digital experiences.',
   details:
