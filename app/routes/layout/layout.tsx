@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router';
-import ClickSpark from '~/components/ClickSpark';
+import ClickSpark from '~/components/ui/ClickSpark';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
-import { SmoothCursor } from '~/components/SmoothCursor';
+import { SmoothCursor } from '~/components/ui/SmoothCursor';
 
 const LayoutPage = () => {
   return (

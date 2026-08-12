@@ -5,7 +5,7 @@ import {
   FaGamepad,
   FaTerminal,
 } from 'react-icons/fa';
-import FileTree2 from '~/components/FileTree';
+import FileTree2 from '~/components/ui/FileTree';
 import { useState } from 'react';
 
 import { personalFileTreeData } from '~/data/FileTreeData/personal';
@@ -36,7 +36,6 @@ const PageItems = ({ setSection }: pageItemsProps) => {
       fileTreeData: contactFileTreeData,
     },
   ];
-
 
   // const leftIcons = [<FaTerminal />, <FaCircle />, <FaGamepad />];
 

@@ -1,8 +1,8 @@
-import AnimatedContent from '~/components/AnimatedContent';
+import AnimatedContent from '~/components/ui/AnimatedContent';
 import type { Route } from './+types/home';
-import BlurText from '~/components/BlurText';
-import BorderGlow from '~/components/BorderGlow';
-import TiltedCard from '~/components/TiltedCard';
+import BlurText from '~/components/ui/BlurText';
+import BorderGlow from '~/components/ui/BorderGlow';
+import TiltedCard from '~/components/ui/TiltedCard';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -59,7 +59,9 @@ export default function Home() {
                 <span className='text-sm text-teal-400'>githubLink</span>
                 <span className='text-sm text-foreground'>=</span>
                 <span className='text-sm text-link-forward cursor-pointer hover:text-link-hover-forward'>
-                  "https://Somebullshit.com/example/url"
+                  <a href='https://github.com/ZaidShaikh01' target='_blank'>
+                    https://github.com/ZaidShaikh01
+                  </a>
                 </span>
               </p>
             </div>
@@ -88,9 +90,7 @@ export default function Home() {
             showMobileWarning={false}
             showTooltip
             displayOverlayContent
-            overlayContent={
-              <p className='tilted-card-demo-text'>Berserk</p>
-            }
+            overlayContent={<p className='tilted-card-demo-text'>Berserk</p>}
           />
 
           {/* <img

@@ -2,7 +2,7 @@ import DetailsTab from '~/components/DetailsTabs';
 import AboutDetailsArea from './contact-details-area';
 import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
-import AnimatedContent from '~/components/AnimatedContent';
+import AnimatedContent from '~/components/ui/AnimatedContent';
 
 type PersonalInfoProps = {
   section: AboutData;

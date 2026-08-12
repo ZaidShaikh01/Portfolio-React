@@ -1,4 +1,4 @@
-import AnimatedContent from '~/components/AnimatedContent';
+import AnimatedContent from '~/components/ui/AnimatedContent';
 
 const NotFoundPage = () => {
   return (

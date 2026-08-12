@@ -1,5 +1,5 @@
-import BorderGlow from '~/components/BorderGlow';
-import TiltedCard from '~/components/TiltedCard';
+import BorderGlow from '~/components/ui/BorderGlow';
+import TiltedCard from '~/components/ui/TiltedCard';
 import { InteractiveHoverButton } from '~/components/ui/interactive-hover-button';
 import type { AboutData } from '~/types/aboutData';
 

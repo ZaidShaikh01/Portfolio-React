@@ -3,7 +3,7 @@ import PageItems from './page-items';
 import type { Tab } from '~/types/Tabs';
 import type { ProjectData } from '~/types/ProjectData';
 import DetailsTab from '~/components/DetailsTabs';
-import GradualBlur from '~/components/GradualBlur';
+import GradualBlur from '~/components/ui/GradualBlur';
 import { projectDemo } from '~/data/project/project';
 
 // Crating Id for the tabs

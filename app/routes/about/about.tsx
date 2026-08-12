@@ -1,7 +1,7 @@
 import PageItems from './page-items';
 import PersonalInfo from './personal-info';
 import { useEffect, useState } from 'react';
-import BlurText from '~/components/BlurText';
+import BlurText from '~/components/ui/BlurText';
 import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
 
