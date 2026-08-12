@@ -3,5 +3,5 @@ import type { ProjectData } from "./ProjectData";
 
 export type Tab = {
   id: number;
-  section: AboutData | ProjectData;
+  section: AboutData;
 };

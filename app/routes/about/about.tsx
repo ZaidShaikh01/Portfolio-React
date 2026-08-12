@@ -49,6 +49,7 @@ const AboutPage = () => {
 
   return (
     <div className='h-full w-full flex '>
+      
       <PageItems setSection={handleSection} />
 
       {!section ? (
