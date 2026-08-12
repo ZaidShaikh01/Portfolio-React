@@ -1,6 +1,6 @@
 import PageItems from './page-items';
 import PersonalInfo from './personal-info';
-import { useState } from 'react';
+import { useEffect, useEffectEvent, useState } from 'react';
 import BlurText from '~/components/BlurText';
 import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
@@ -13,6 +13,26 @@ const ContactPage = () => {
 
   // I need to handle tabs here only
   const [tabs, setTabs] = useState<Tab[] | null>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  // First use effect to initilaize the data, cuz localstorage didnt exist till now
+  useEffect(() => {
+    const tabsData = localStorage.getItem('contact-tabs');
+    const sectionData = localStorage.getItem('contact-section');
+    if (tabsData) {
+      setTabs(JSON.parse(tabsData));
+    }
+    if (sectionData) {
+      setSection(JSON.parse(sectionData));
+    }
+    setLoaded(true);
+  }, []);
+
+  // After loaded
+  useEffect(() => {
+    localStorage.setItem('contact-tabs', JSON.stringify(tabs));
+    localStorage.setItem('contact-section', JSON.stringify(section));
+  }, [tabs, section, loaded]);
 
   const handleSection = (data: AboutData) => {
     setSection(data);
