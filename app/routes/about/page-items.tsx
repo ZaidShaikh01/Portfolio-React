@@ -17,9 +17,11 @@ type pageItemsProps = {
 };
 
 const PageItems = ({ setSection }: pageItemsProps) => {
+  // States for left sectiton dropdown
   const [isOpen, setIsOpen] = useState(true);
   const [isContactOpen, setIsContactOpen] = useState(true);
 
+  // Accordian list
   const accordian = [
     {
       name: 'Personal-info',
@@ -35,17 +37,19 @@ const PageItems = ({ setSection }: pageItemsProps) => {
     },
   ];
 
-  const leftIcons = [<FaTerminal />, <FaCircle />, <FaGamepad />];
+
+  // const leftIcons = [<FaTerminal />, <FaCircle />, <FaGamepad />];
 
   return (
     <div className='flex '>
       {/* Left icons */}
-      <div className='flex flex-col gap-5 p-3 border-r border-r-stroke '>
+      {/* <div className='flex flex-col gap-5 p-3 border-r border-r-stroke '>
         {leftIcons.map((item) => item)}
-      </div>
+      </div> */}
       {/*Accordian Container */}
 
       <div className='w-52 border-r border-r-stroke '>
+        {/* Using Map to display all the left Items */}
         {accordian.map((item) => (
           <div key={item.name} className='personal-accordian'>
             <button
