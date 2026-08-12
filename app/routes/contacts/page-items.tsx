@@ -14,7 +14,7 @@ import type { AboutData } from '~/types/aboutData';
 import { findFileTreeData } from '~/data/FileTreeData/find-me-also-in';
 
 type pageItemsProps = {
-  setSection: (data: AboutData) => void;
+  setSection: (data: AboutData | null) => void;
 };
 
 const PageItems = ({ setSection }: pageItemsProps) => {
@@ -61,6 +61,14 @@ const PageItems = ({ setSection }: pageItemsProps) => {
             </div>
           </div>
         ))}
+
+        {/* Send me an email text */}
+        <button
+          onClick={() => setSection(null)}
+          className='w-full flex justify-center p-3  text-l text-gray-300 border-b border-b-stroke'
+        >
+          send-me-a-mail
+        </button>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { useEffect, useEffectEvent, useState } from 'react';
 import BlurText from '~/components/BlurText';
 import type { AboutData } from '~/types/aboutData';
 import type { Tab } from '~/types/Tabs';
+import ContactForm from './contacts-form';
 
 let nextTab = 0;
 
@@ -30,27 +31,37 @@ const ContactPage = () => {
 
   // After loaded
   useEffect(() => {
+    if (!loaded) return;
     localStorage.setItem('contact-tabs', JSON.stringify(tabs));
     localStorage.setItem('contact-section', JSON.stringify(section));
   }, [tabs, section, loaded]);
 
-  const handleSection = (data: AboutData) => {
+  const handleSection = (data: AboutData | null) => {
     setSection(data);
 
-    setTabs([
-      ...(tabs || []),
-      {
-        id: nextTab++,
-        section: data,
-      },
-    ]);
+    // If there is some data, I will set tab or I will just remove everything in the tab by setting it to null
+
+    if (data) {
+      setTabs([
+        ...(tabs || []),
+        {
+          id: nextTab++,
+          section: data,
+        },
+      ]);
+    } else {
+      setTabs(null);
+    }
   };
   console.log(tabs);
 
+
+  // A seciton is set accoring to tabs section
   const onTabSelect = (tab: Tab) => {
     setSection(tab.section);
   };
 
+  // removing the tabs
   const onTabRemove = (tab: Tab) => {
     if (tabs) {
       let newTabs = [];
@@ -69,14 +80,12 @@ const ContactPage = () => {
 
   return (
     <div className='h-full w-full flex '>
+      {/* handle section can also return null */}
       <PageItems setSection={handleSection} />
-
+      {/* if everyhing is null it will open the form page */}
       {!section ? (
         <div className='h-full w-full'>
-          <BlurText
-            text='Select a section.'
-            className='w-full h-full flex justify-center items-center text-6xl text-gray-300'
-          />
+          <ContactForm />
         </div>
       ) : (
         <PersonalInfo
