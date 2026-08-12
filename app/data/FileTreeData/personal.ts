@@ -6,7 +6,7 @@ import {
   interestsData,
   projectsData,
   skillsData,
-} from './about/demo';
+} from '../about/demo';
 
 export const personalFileTreeData: FileTreeItem[] = [
   {

@@ -1,68 +1,72 @@
-import { useState } from "react";
-import { FaAngleDown, FaAngleRight, FaEnvelope } from "react-icons/fa6";
-import FileTree2 from "~/components/FileTree";
-import { contactFileTreeData } from "~/data/contact";
-import { personalFileTreeData } from "~/data/personal";
-import type { AboutData } from "~/types/aboutData";
+import PageItems from './page-items';
+import PersonalInfo from './personal-info';
+import { useState } from 'react';
+import BlurText from '~/components/BlurText';
+import type { AboutData } from '~/types/aboutData';
+import type { Tab } from '~/types/Tabs';
 
-type pageItemsProps = {
-  setSection: (data: AboutData) => void;
-};
+let nextTab = 0;
 
-const ContactPage = ({setSection}:pageItemsProps) => {
+const ContactPage = () => {
+  // A single particular section
+  const [section, setSection] = useState<AboutData | null>(null);
 
-  const [isOpen, setIsOpen] = useState(true);
-    const [isContactOpen, setIsContactOpen] = useState(true);
-  
-    const accordian = [
+  // I need to handle tabs here only
+  const [tabs, setTabs] = useState<Tab[] | null>(null);
+
+  const handleSection = (data: AboutData) => {
+    setSection(data);
+
+    setTabs([
+      ...(tabs || []),
       {
-        name: 'Contact-info',
-        isOpen: isContactOpen,
-        onClick: () => setIsContactOpen((prev) => !prev),
-        fileTreeData: contactFileTreeData,
+        id: nextTab++,
+        section: data,
       },
-      {
-        name: 'Find-me-also-in',
-        isOpen:isOpen,
-        onClick: () => setIsOpen((prev) => !prev),
-        fileTreeData: contactFileTreeData,
+    ]);
+  };
+  console.log(tabs);
+
+  const onTabSelect = (tab: Tab) => {
+    setSection(tab.section);
+  };
+
+  const onTabRemove = (tab: Tab) => {
+    if (tabs) {
+      let newTabs = [];
+      newTabs = tabs.filter((item) => {
+        return item !== tab;
+      });
+      if (newTabs.length === 0) {
+        setSection(null);
+        setTabs(null);
+      } else {
+        setSection(newTabs[newTabs.length - 1].section);
+        setTabs(newTabs);
       }
-    ];
+    }
+  };
 
-  return <div className= 'flex w-full h-full '>
+  return (
+    <div className='h-full w-full flex '>
+      
+      <PageItems setSection={handleSection} />
 
-    {/* Left side, page items */}
-    <div className=" w-full h-full flex-1 border-r border-r-stroke ">
-     <div className='w-52 border-r border-r-stroke '>
-             {accordian.map((item) => (
-               <div key={item.name} className='personal-accordian'>
-                 <button
-                   className='w-full flex items-center p-3 gap-1 text-sm text-gray-300 border-b border-b-stroke'
-                   onClick={item.onClick}
-                 >
-                   {' '}
-                   {item.isOpen ? <FaAngleDown /> : <FaAngleRight />}
-                   {item.name}
-                 </button>
-                 <div
-                   className={`${item.isOpen ? '' : 'hidden'} border-b border-b-stroke pb-1`}
-                 >
-                   <FileTree2
-                     onItemSelected={setSection}
-                     fileTreeData={item.fileTreeData}
-                   />
-                 </div>
-               </div>
-             ))}
-           </div>
+      {!section ? (
+        <BlurText
+          text='Select a section.'
+          className='w-full h-full flex justify-center items-center text-6xl text-gray-300'
+        />
+      ) : (
+        <PersonalInfo
+          tabs={tabs}
+          section={section}
+          setTabSection={onTabSelect}
+          onTabRemove={onTabRemove}
+        />
+      )}
     </div>
-
-    {/* Contact container */}
-    <div className="w-full h-full flex-18">
-
-    </div>
-
-  </div>;
+  );
 };
 
 export default ContactPage;

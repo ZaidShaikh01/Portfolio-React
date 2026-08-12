@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { personalFileTreeData } from '~/data/FileTreeData/personal';
 import { contactFileTreeData } from '~/data/FileTreeData/contact';
 import type { AboutData } from '~/types/aboutData';
+import { findFileTreeData } from '~/data/FileTreeData/find-me-also-in';
 
 type pageItemsProps = {
   setSection: (data: AboutData) => void;
@@ -22,27 +23,21 @@ const PageItems = ({ setSection }: pageItemsProps) => {
 
   const accordian = [
     {
-      name: 'Personal-info',
-      isOpen: isOpen,
-      onClick: () => setIsOpen((prev) => !prev),
-      fileTreeData: personalFileTreeData,
-    },
-    {
-      name: 'Contact-info',
+      name: 'contacts',
       isOpen: isContactOpen,
       onClick: () => setIsContactOpen((prev) => !prev),
       fileTreeData: contactFileTreeData,
     },
+    {
+      name: 'also-find-me-in',
+      isOpen: isOpen,
+      onClick: () => setIsOpen((prev) => !prev),
+      fileTreeData: findFileTreeData,
+    },
   ];
-
-  const leftIcons = [<FaTerminal />, <FaCircle />, <FaGamepad />];
 
   return (
     <div className='flex '>
-      {/* Left icons */}
-      <div className='flex flex-col gap-5 p-3 border-r border-r-stroke '>
-        {leftIcons.map((item) => item)}
-      </div>
       {/*Accordian Container */}
 
       <div className='w-52 border-r border-r-stroke '>
