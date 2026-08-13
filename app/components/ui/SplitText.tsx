@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import gsap from 'gsap';
-
 export interface SplitTextProps {
   text: string;
   className?: string;
@@ -9,8 +7,8 @@ export interface SplitTextProps {
   duration?: number;
   ease?: string | ((t: number) => number);
   splitType?: 'chars' | 'words' | 'lines' | 'words, chars';
-  from?: gsap.TweenVars;
-  to?: gsap.TweenVars;
+  from?: Record<string, any>;
+  to?: Record<string, any>;
   threshold?: number;
   rootMargin?: string;
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
@@ -37,6 +35,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   const animationCompletedRef = useRef(false);
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
+  // Wait for fonts before splitting the text
   useEffect(() => {
     if (document.fonts.status === 'loaded') {
       setFontsLoaded(true);
@@ -49,11 +48,15 @@ const SplitText: React.FC<SplitTextProps> = ({
 
   useEffect(() => {
     if (!ref.current || !text || !fontsLoaded) return;
+
     if (animationCompletedRef.current) return;
 
     let cleanup: (() => void) | undefined;
 
-    const loadAnimation = async () => {
+    const init = async () => {
+      // IMPORTANT:
+      // GSAP is loaded only in the browser.
+      const { gsap } = await import('gsap');
       const { ScrollTrigger } = await import('gsap/ScrollTrigger');
       const { SplitText: GSAPSplitText } = await import('gsap/SplitText');
 
@@ -100,6 +103,10 @@ const SplitText: React.FC<SplitTextProps> = ({
             targets = self.lines;
           }
 
+          if (!targets.length) {
+            targets = self.chars || self.words || self.lines || [];
+          }
+
           return gsap.fromTo(
             targets,
             { ...from },
@@ -107,6 +114,7 @@ const SplitText: React.FC<SplitTextProps> = ({
               ...to,
               duration,
               ease,
+
               stagger: delay / 1000,
 
               scrollTrigger: {
@@ -119,10 +127,12 @@ const SplitText: React.FC<SplitTextProps> = ({
 
               onComplete: () => {
                 animationCompletedRef.current = true;
+
                 onLetterAnimationComplete?.();
               },
 
               willChange: 'transform, opacity',
+
               force3D: true,
             },
           );
@@ -130,9 +140,9 @@ const SplitText: React.FC<SplitTextProps> = ({
       });
 
       cleanup = () => {
-        ScrollTrigger.getAll().forEach((st) => {
-          if (st.trigger === el) {
-            st.kill();
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (trigger.trigger === el) {
+            trigger.kill();
           }
         });
 
@@ -142,7 +152,7 @@ const SplitText: React.FC<SplitTextProps> = ({
       };
     };
 
-    loadAnimation();
+    init();
 
     return () => {
       cleanup?.();
@@ -161,18 +171,18 @@ const SplitText: React.FC<SplitTextProps> = ({
     onLetterAnimationComplete,
   ]);
 
-  const style: React.CSSProperties = {
-    textAlign,
-    wordWrap: 'break-word',
-    willChange: 'transform, opacity',
-  };
-
-  const classes = `split-parent overflow-hidden inline-block whitespace-normal ${className}`;
-
   const Tag = tag as React.ElementType;
 
   return (
-    <Tag ref={ref} style={style} className={classes}>
+    <Tag
+      ref={ref}
+      style={{
+        textAlign,
+        wordWrap: 'break-word',
+        willChange: 'transform, opacity',
+      }}
+      className={`split-parent overflow-hidden inline-block whitespace-normal ${className}`}
+    >
       {text}
     </Tag>
   );

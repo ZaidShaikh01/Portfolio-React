@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import gsap from 'gsap';
 
-interface AnimatedContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+interface AnimatedContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   container?: Element | string | null;
   distance?: number;
@@ -46,7 +44,9 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const initAnimation = async () => {
+    const init = async () => {
+      // GSAP is loaded ONLY in the browser
+      const { gsap } = await import('gsap');
       const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
       gsap.registerPlugin(ScrollTrigger);
@@ -55,19 +55,17 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
 
       if (!el) return;
 
-      let scrollerTarget:
-        | Element
-        | string
-        | null = container ||
-        document.getElementById('snap-main-container') ||
-        null;
+      let scrollerTarget: Element | string | null =
+        container || document.getElementById('snap-main-container') || null;
 
       if (typeof scrollerTarget === 'string') {
         scrollerTarget = document.querySelector(scrollerTarget);
       }
 
       const axis = direction === 'horizontal' ? 'x' : 'y';
+
       const offset = reverse ? -distance : distance;
+
       const startPct = (1 - threshold) * 100;
 
       gsap.set(el, {
@@ -92,8 +90,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
               delay: disappearAfter,
               duration: disappearDuration,
               ease: disappearEase,
-              onComplete: () =>
-                onDisappearanceComplete?.(),
+              onComplete: onDisappearanceComplete,
             });
           }
         },
@@ -123,8 +120,8 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
 
     let cleanup: (() => void) | undefined;
 
-    initAnimation().then((fn) => {
-      cleanup = fn;
+    init().then((cleanupFunction) => {
+      cleanup = cleanupFunction;
     });
 
     return () => {
@@ -150,11 +147,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   ]);
 
   return (
-    <div
-      ref={ref}
-      className={`invisible ${className}`}
-      {...props}
-    >
+    <div ref={ref} className={`invisible ${className}`} {...props}>
       {children}
     </div>
   );
