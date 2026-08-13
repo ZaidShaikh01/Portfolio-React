@@ -4,9 +4,11 @@ import { FaAngleDown, FaAngleRight, FaArrowDown } from 'react-icons/fa6';
 import PageItems from './page-items';
 
 const CertificatePage = () => {
+  // To set the items close or open
   const [intenshipIsOpen, setInternshipOpen] = useState(true);
   const [technIsOpen, setTechOpen] = useState(true);
-  const internsships = [
+  //   Items in the internship section
+  const internships = [
     {
       companyName: 'Endava',
       companyLogoUrl: '/images/DAVA.png',
@@ -20,19 +22,34 @@ const CertificatePage = () => {
       companyLogoUrl: '/images/DAVA.png',
     },
   ];
+  const technologies = [
+    {
+      companyName: 'Endava',
+      companyLogoUrl: '/images/OReilly_logo_rgb.png',
+    },
+    {
+      companyName: 'Techlyverse',
+      companyLogoUrl: '/images/udemy_icon.png',
+    },
+    {
+      companyName: 'Ester',
+      companyLogoUrl: '/images/udemy_icon.png',
+    },
+  ];
+  //   Items in the pageList
 
   const pageList = [
     {
       sectionName: 'Internships',
       onClick: () => setInternshipOpen((prev) => !prev),
       isOpen: intenshipIsOpen,
-      setcionList: internsships,
+      setcionList: internships,
     },
     {
       sectionName: 'Technologies',
       onClick: () => setTechOpen((prev) => !prev),
       isOpen: technIsOpen,
-      setcionList: internsships,
+      setcionList: technologies,
     },
   ];
 
