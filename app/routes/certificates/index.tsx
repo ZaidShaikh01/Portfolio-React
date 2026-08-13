@@ -25,15 +25,19 @@ const CertificatePage = () => {
   ];
   const technologies = [
     {
-      companyName: 'Endava',
+      companyName: 'HTML/CSS',
       companyLogoUrl: '/images/OReilly_logo_rgb.png',
     },
     {
-      companyName: 'Techlyverse',
+      companyName: 'Javascript',
+      companyLogoUrl: '/images/OReilly_logo_rgb.png',
+    },
+    {
+      companyName: 'Flutter',
       companyLogoUrl: '/images/udemy_icon.png',
     },
     {
-      companyName: 'Ester',
+      companyName: 'Flutter',
       companyLogoUrl: '/images/udemy_icon.png',
     },
   ];
