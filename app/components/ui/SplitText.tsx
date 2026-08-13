@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
+
+import gsap from 'gsap';
 
 export interface SplitTextProps {
   text: string;
@@ -54,8 +55,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 
     const loadAnimation = async () => {
       const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-      const { SplitText: GSAPSplitText } =
-        await import('gsap/SplitText');
+      const { SplitText: GSAPSplitText } = await import('gsap/SplitText');
 
       gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
 
@@ -65,15 +65,11 @@ const SplitText: React.FC<SplitTextProps> = ({
 
       const startPct = (1 - threshold) * 100;
 
-      const marginMatch =
-        /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
+      const marginMatch = /^(-?\d+(?:\.\d+)?)(px|em|rem|%)?$/.exec(rootMargin);
 
-      const marginValue = marginMatch
-        ? parseFloat(marginMatch[1])
-        : 0;
+      const marginValue = marginMatch ? parseFloat(marginMatch[1]) : 0;
 
-      const marginUnit =
-        marginMatch?.[2] || 'px';
+      const marginUnit = marginMatch?.[2] || 'px';
 
       const sign =
         marginValue === 0
@@ -98,15 +94,9 @@ const SplitText: React.FC<SplitTextProps> = ({
         onSplit: (self: any) => {
           if (splitType.includes('chars') && self.chars?.length) {
             targets = self.chars;
-          } else if (
-            splitType.includes('words') &&
-            self.words?.length
-          ) {
+          } else if (splitType.includes('words') && self.words?.length) {
             targets = self.words;
-          } else if (
-            splitType.includes('lines') &&
-            self.lines?.length
-          ) {
+          } else if (splitType.includes('lines') && self.lines?.length) {
             targets = self.lines;
           }
 
@@ -134,7 +124,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 
               willChange: 'transform, opacity',
               force3D: true,
-            }
+            },
           );
         },
       });
@@ -177,17 +167,12 @@ const SplitText: React.FC<SplitTextProps> = ({
     willChange: 'transform, opacity',
   };
 
-  const classes =
-    `split-parent overflow-hidden inline-block whitespace-normal ${className}`;
+  const classes = `split-parent overflow-hidden inline-block whitespace-normal ${className}`;
 
   const Tag = tag as React.ElementType;
 
   return (
-    <Tag
-      ref={ref}
-      style={style}
-      className={classes}
-    >
+    <Tag ref={ref} style={style} className={classes}>
       {text}
     </Tag>
   );

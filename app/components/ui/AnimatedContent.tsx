@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 
-interface AnimatedContentProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AnimatedContentProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   container?: Element | string | null;
   distance?: number;
@@ -45,16 +46,19 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const loadAnimation = async () => {
+    const initAnimation = async () => {
       const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
       gsap.registerPlugin(ScrollTrigger);
 
       const el = ref.current;
+
       if (!el) return;
 
-      let scrollerTarget: Element | string | null =
-        container ||
+      let scrollerTarget:
+        | Element
+        | string
+        | null = container ||
         document.getElementById('snap-main-container') ||
         null;
 
@@ -76,6 +80,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
       const tl = gsap.timeline({
         paused: true,
         delay,
+
         onComplete: () => {
           onComplete?.();
 
@@ -87,7 +92,8 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
               delay: disappearAfter,
               duration: disappearDuration,
               ease: disappearEase,
-              onComplete: () => onDisappearanceComplete?.(),
+              onComplete: () =>
+                onDisappearanceComplete?.(),
             });
           }
         },
@@ -115,7 +121,15 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
       };
     };
 
-    loadAnimation();
+    let cleanup: (() => void) | undefined;
+
+    initAnimation().then((fn) => {
+      cleanup = fn;
+    });
+
+    return () => {
+      cleanup?.();
+    };
   }, [
     container,
     distance,
