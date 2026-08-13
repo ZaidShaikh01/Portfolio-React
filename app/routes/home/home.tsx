@@ -6,8 +6,8 @@ import TiltedCard from '~/components/ui/TiltedCard';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: 'New React Router App' },
-    { name: 'description', content: 'Welcome to React Router!' },
+    { title: 'Portfolio - Zaid' },
+    { name: 'description', content: 'Welcome to My Portfolio!' },
   ];
 }
 
@@ -78,9 +78,9 @@ export default function Home() {
         />
         <BorderGlow className='relative overflow-hidden h-4/5 rounded-lg'>
           <TiltedCard
-            imageSrc='/images/profile.jpg'
-            altText='Berserk'
-            captionText='Berserk'
+            imageSrc='/images/profile.jpeg'
+            altText='Zaid'
+            captionText='Zaid'
             containerHeight='100%'
             containerWidth='320px'
             imageHeight='100%'
@@ -90,7 +90,7 @@ export default function Home() {
             showMobileWarning={false}
             showTooltip
             displayOverlayContent
-            overlayContent={<p className='tilted-card-demo-text'>Berserk</p>}
+            overlayContent={<p className='tilted-card-demo-text'>Zaid</p>}
           />
 
           {/* <img

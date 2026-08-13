@@ -1,5 +1,5 @@
 import type { FileTreeItem } from '~/types/fileTreeItem';
-import { emailData, phoneData } from '../about/demo';
+import { emailData, phoneData } from '../about/aboutData';
 
 export const contactFileTreeData: FileTreeItem[] = [
   {
