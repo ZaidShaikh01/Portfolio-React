@@ -1,9 +1,11 @@
 import { section } from 'motion/react-client';
 import { useState } from 'react';
 import { FaAngleDown, FaAngleRight, FaArrowDown } from 'react-icons/fa6';
+import PageItems from './page-items';
 
 const CertificatePage = () => {
   const [intenshipIsOpen, setInternshipOpen] = useState(true);
+  const [technIsOpen, setTechOpen] = useState(true);
   const internsships = [
     {
       companyName: 'Endava',
@@ -28,8 +30,8 @@ const CertificatePage = () => {
     },
     {
       sectionName: 'Technologies',
-      onClick: () => setInternshipOpen((prev) => !prev),
-      isOpen: intenshipIsOpen,
+      onClick: () => setTechOpen((prev) => !prev),
+      isOpen: technIsOpen,
       setcionList: internsships,
     },
   ];
@@ -38,38 +40,7 @@ const CertificatePage = () => {
     <div className='w-full h-full flex '>
       {/* Side bar */}
       <div className='flex-1   border-r border-r-stroke h-full w-full'>
-        {pageList.map((item) => (
-          <div className='border-b border-b-stroke'>
-            <button
-              onClick={item.onClick}
-              className='w-full flex text-sm justify-center items-center border-b border-b-stroke  text-gray-400 p-2'
-            >
-              {/* Drop down Icon  */}
-              <span>{item.isOpen ? <FaAngleDown /> : <FaAngleRight />}</span>
-              <span className='ml-2'>{item.sectionName}</span>
-            </button>
-            {/* DropDown Items */}
-            {intenshipIsOpen && (
-              <div className='dropdown items'>
-                {/* Company Drop down */}
-                {item.setcionList.map((item) => (
-                  <div className='flex justify-around w-full my-3 items-center'>
-                    <div className='w-5'>
-                      <img
-                        src={item.companyLogoUrl}
-                        className='object-fit w-full'
-                        alt={item.companyName}
-                      />
-                    </div>
-                    <div className='text-sm  text-gray-400'>
-                      {item.companyName}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+        <PageItems pageList={pageList} />
       </div>
       {/* Main Conten */}
       <div className='flex-9 h-full w-full'></div>
