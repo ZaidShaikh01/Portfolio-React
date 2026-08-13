@@ -1,9 +1,7 @@
 import {
   FaAngleDown,
   FaAngleRight,
-  FaCircle,
-  FaGamepad,
-  FaTerminal,
+
 } from 'react-icons/fa';
 import FileTree2 from '~/components/ui/FileTree';
 import { useState } from 'react';

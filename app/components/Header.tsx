@@ -30,6 +30,12 @@ transition-opacity duration-700 ease-in-out ${pathname === '/' ? 'border-b borde
           >
             <Link to='/projects'>_projects</Link>
           </div>
+          <div
+            className={`p-3 cursor-pointer hover:border-b hover:border-b-cyan-500 text-text-foreground text-sm border-r border-r-stroke transition-opacity duration-700 ease-in-out
+               ${pathname === '/certificates' ? 'border-b border-b-cyan-500' : ''}`}
+          >
+            <Link to='/certificates'>_certificates</Link>
+          </div>
         </div>
       </div>
       <div className='hidden md:block'>

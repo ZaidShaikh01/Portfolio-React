@@ -10,6 +10,7 @@ export default [
     index('routes/home/home.tsx'),
     route('about', './routes/about/about.tsx'),
     route('projects', './routes/projects/index.tsx'),
+    route('certificates', './routes/certificates/index.tsx'),
     route('contacts', './routes/contacts/index.tsx'),
     route('*', './routes/not-found/index.tsx'),
   ]),
