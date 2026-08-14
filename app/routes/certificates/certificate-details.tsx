@@ -11,22 +11,21 @@ const CertificateDetails = ({ section }: CertificateDetailsProps) => {
       <div className='text-3xl text-center'>{section.certificateTitle}</div>
       <div className='flex  w-full justify-around'>
         <div>
-          {section.beginDate && (
-            <div>
-              <span className='text-xl'>From - </span>
-              <span className='text-indigo-500 text-xl'>
-                {section.beginDate.toLocaleDateString()}
-              </span>{' '}
-             
-            </div>
-          )}
-        </div>
-        <div>
-          <span className='text-xl'>To - </span>
-          <span className='text-indigo-500 text-xl'>
-            {section.endDate.toLocaleDateString()}
+          <span className='text-xl'>
+            {section.endDate ? 'From -' : 'Issued Date - '}{' '}
           </span>
+          <span className='text-indigo-500 text-xl'>
+            {section.beginDate.toLocaleDateString()}
+          </span>{' '}
         </div>
+        {section.endDate && (
+          <div>
+            <span className='text-xl'>To - </span>
+            <span className='text-indigo-500 text-xl'>
+              {section.endDate.toLocaleDateString()}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Details of certificate & Image preview*/}

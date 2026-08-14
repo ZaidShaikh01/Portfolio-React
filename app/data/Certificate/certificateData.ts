@@ -25,20 +25,20 @@ export const techlyverseData: certificateData = {
   certificateLogoURL: '/images/techlyverse.png',
 };
 
-
 export const htmlCssData: certificateData = {
   certificateTitle: 'Modern HTML & CSS 2.0',
-  // beginDate: new Date(2026, MONTH, DAY),
-  endDate: new Date(2026, 17, 26),
+  beginDate: new Date(2026, 17, 26),
+  // endDate: new Date(2026, 17, 26),
   certificateDetails:
     'Completed training in modern HTML and CSS, covering the fundamentals and practical techniques used to build structured, responsive, and modern web interfaces.',
   certificateLogoURL: '/images/OReilly_logo_rgb.png',
 };
 
 export const javascriptData: certificateData = {
-  certificateTitle: 'Modern JavaScript from The Beginning [Second Edition] - Second Edition',
-  // beginDate: new Date(2026, MONTH, DAY),
-  endDate: new Date(2026, 6, 24),
+  certificateTitle:
+    'Modern JavaScript from The Beginning [Second Edition] - Second Edition',
+  beginDate: new Date(2026, 6, 24),
+  // endDate: new Date(2026, 6, 24),
   certificateDetails:
     'Completed training in modern JavaScript with a focus on core language concepts, programming fundamentals, DOM manipulation, and building interactive web applications.',
   certificateLogoURL: '/images/OReilly_logo_rgb.png',
@@ -46,8 +46,8 @@ export const javascriptData: certificateData = {
 
 export const flutterMasterclassData: certificateData = {
   certificateTitle: 'Flutter Masterclass - (Dart, Api & More)',
-  // beginDate: new Date(YEAR, MONTH, DAY),
-  endDate: new Date(2025, 3, 12),
+  beginDate: new Date(2025, 3, 12),
+  // endDate: new Date(2025, 3, 12),
   certificateDetails:
     'Completed a comprehensive Flutter development course covering Dart, Flutter application development, APIs, and the fundamentals of building cross-platform mobile applications.',
   certificateLogoURL: '/images/udemy_icon.png',
@@ -55,8 +55,8 @@ export const flutterMasterclassData: certificateData = {
 
 export const dartFlutterData: certificateData = {
   certificateTitle: 'Dart & Flutter | The Complete Flutter Development Course',
-  // beginDate: new Date(YEAR, MONTH, DAY),
-  endDate: new Date(2025, 7, 6),
+  beginDate: new Date(2025, 7, 6),
+  //endDate: new Date(2025, 7, 6),
   certificateDetails:
     'Completed a comprehensive Dart and Flutter development course covering application development, Flutter fundamentals, UI building, state management, and cross-platform mobile development.',
   certificateLogoURL: '/images/udemy_icon.png',
