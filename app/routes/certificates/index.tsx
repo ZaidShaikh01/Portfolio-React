@@ -1,59 +1,19 @@
-import { section } from 'motion/react-client';
 import { useState } from 'react';
-import { FaAngleDown, FaAngleRight, FaArrowDown } from 'react-icons/fa6';
 import PageItems from './page-items';
-import { InteractiveHoverButton } from '~/components/ui/interactive-hover-button';
 import CertificateDetails from './certificate-details';
-import { endavaData, esterData, techlyverseData } from '~/data/Certificate/certificateData';
 import type { certificateData } from '~/types/certificateData';
+import BlurText from '~/components/ui/BlurText';
+import {
+  internships,
+  technologies,
+} from '~/data/Certificate/certificateInternshipsList';
 
 const CertificatePage = () => {
   // To set the items close or open
-  const [section,setSeciton] = useState<certificateData | null>(null);
+  const [section, setSeciton] = useState<certificateData | null>(null);
 
   const [intenshipIsOpen, setInternshipOpen] = useState(true);
   const [technIsOpen, setTechOpen] = useState(true);
-  //   Items in the internship section
-  const internships = [
-    {
-      companyName: 'Endava',
-      companyLogoUrl: '/images/DAVA.png',
-      sectionData: endavaData
-    },
-    {
-      companyName: 'Techlyverse',
-      companyLogoUrl: '/images/DAVA.png',
-      sectionData: techlyverseData
-    },
-    {
-      companyName: 'Ester',
-      companyLogoUrl: '/images/DAVA.png',
-      sectionData: esterData
-    },
-  ];
-  const technologies = [
-    {
-      companyName: 'HTML/CSS',
-      companyLogoUrl: '/images/OReilly_logo_rgb.png',
-      sectionData: esterData
-    },
-    {
-      companyName: 'Javascript',
-      companyLogoUrl: '/images/OReilly_logo_rgb.png',
-      sectionData: esterData
-    },
-    {
-      companyName: 'Flutter',
-      companyLogoUrl: '/images/udemy_icon.png',
-      sectionData: esterData
-    },
-    {
-      companyName: 'Flutter',
-      companyLogoUrl: '/images/udemy_icon.png',
-      sectionData: esterData
-    },
-  ];
-  //   Items in the pageList
 
   const pageList = [
     {
@@ -70,23 +30,27 @@ const CertificatePage = () => {
     },
   ];
 
-  console.log(section);
-
   return (
     <div className='w-full h-full flex '>
-
       {/* Side bar */}
       <div className='flex-1  border-r border-r-stroke h-full w-full'>
         <PageItems pageList={pageList} setSection={setSeciton} />
       </div>
 
       {/* If section is null we need to get something */}
-      {
-        section ? <CertificateDetails section={section} /> : <p>Set a section</p>
-      }
-      
-      {/* Main Conten */}
-     
+      {section ? (
+        // {/* Main Content */}
+        <CertificateDetails section={section} />
+      ) : (
+        // When nothing is there
+        <div className='flex-9 h-full w-full'>
+          {' '}
+          <BlurText
+            text='Select a certificate.'
+            className='w-full h-full flex justify-center items-center text-6xl text-gray-300'
+          />
+        </div>
+      )}
     </div>
   );
 };
