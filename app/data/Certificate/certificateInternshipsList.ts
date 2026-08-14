@@ -1,4 +1,12 @@
-import { endavaData, esterData, techlyverseData } from './certificateData';
+import {
+  dartFlutterData,
+  endavaData,
+  estherData,
+  flutterMasterclassData,
+  htmlCssData,
+  javascriptData,
+  techlyverseData,
+} from './certificateData';
 
 export const internships = [
   {
@@ -8,34 +16,34 @@ export const internships = [
   },
   {
     companyName: 'Techlyverse',
-    companyLogoUrl: '/images/DAVA.png',
+    companyLogoUrl: '/images/techlyverse.png',
     sectionData: techlyverseData,
   },
   {
     companyName: 'Ester',
-    companyLogoUrl: '/images/DAVA.png',
-    sectionData: esterData,
+    companyLogoUrl: '/images/esther.png',
+    sectionData: estherData,
   },
 ];
 export const technologies = [
   {
     companyName: 'HTML/CSS',
     companyLogoUrl: '/images/OReilly_logo_rgb.png',
-    sectionData: esterData,
+    sectionData: htmlCssData,
   },
   {
     companyName: 'Javascript',
     companyLogoUrl: '/images/OReilly_logo_rgb.png',
-    sectionData: esterData,
+    sectionData: javascriptData,
   },
   {
     companyName: 'Flutter',
     companyLogoUrl: '/images/udemy_icon.png',
-    sectionData: esterData,
+    sectionData: flutterMasterclassData,
   },
   {
     companyName: 'Flutter',
     companyLogoUrl: '/images/udemy_icon.png',
-    sectionData: esterData,
+    sectionData: dartFlutterData,
   },
 ];

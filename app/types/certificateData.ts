@@ -1,6 +1,6 @@
 export type certificateData = {
   certificateTitle: string;
-  beginDate: Date;
+  beginDate?: Date;
   endDate: Date;
   certificateDetails: string;
   certificateLogoURL: string;
