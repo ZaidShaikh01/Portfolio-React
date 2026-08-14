@@ -1,4 +1,5 @@
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa6';
+import type { certificateData } from '~/types/certificateData';
 
 type pageItemsProps = {
   pageList: {
@@ -8,12 +9,14 @@ type pageItemsProps = {
     setcionList: {
       companyName: string;
       companyLogoUrl: string;
+      sectionData: certificateData;
     }[];
   }[];
-  
+
+  setSection: (data: certificateData) => void;
 };
 
-const PageItems = ({ pageList }: pageItemsProps) => {
+const PageItems = ({ pageList, setSection }: pageItemsProps) => {
   return (
     <div>
       {pageList.map((item) => (
@@ -31,7 +34,12 @@ const PageItems = ({ pageList }: pageItemsProps) => {
             <div className='dropdown items'>
               {/* Company Drop down */}
               {item.setcionList.map((item) => (
-                <div className='flex justify-around w-full my-3 items-center'>
+                <button
+                  onClick={() => {
+                    setSection(item.sectionData);
+                  }}
+                  className='flex justify-around w-full my-3 items-center'
+                >
                   <div className='w-5'>
                     <img
                       src={item.companyLogoUrl}
@@ -42,7 +50,7 @@ const PageItems = ({ pageList }: pageItemsProps) => {
                   <div className='text-sm  text-gray-400'>
                     {item.companyName}
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           )}
