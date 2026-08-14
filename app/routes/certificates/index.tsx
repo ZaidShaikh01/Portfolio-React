@@ -4,6 +4,7 @@ import { FaAngleDown, FaAngleRight, FaArrowDown } from 'react-icons/fa6';
 import PageItems from './page-items';
 import { InteractiveHoverButton } from '~/components/ui/interactive-hover-button';
 import CertificateDetails from './certificate-details';
+import { endavaData, esterData, techlyverseData } from '~/data/Certificate/certificateData';
 
 const CertificatePage = () => {
   // To set the items close or open
@@ -14,14 +15,17 @@ const CertificatePage = () => {
     {
       companyName: 'Endava',
       companyLogoUrl: '/images/DAVA.png',
+      sectionData: endavaData
     },
     {
       companyName: 'Techlyverse',
       companyLogoUrl: '/images/DAVA.png',
+      sectionData: techlyverseData
     },
     {
       companyName: 'Ester',
       companyLogoUrl: '/images/DAVA.png',
+      sectionData: esterData
     },
   ];
   const technologies = [
