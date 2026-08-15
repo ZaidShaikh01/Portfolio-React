@@ -20,7 +20,7 @@ const PersonalInfo = ({
   console.log('Set Section ', section.details);
 
   return (
-    <div className='flex flex-col w-full h-full'>
+    <div className='flex flex-col w-full h-full '>
       {/* Tabs section */}
       {/* I need to pass the tabs list and event handler thats it */}
       <DetailsTab

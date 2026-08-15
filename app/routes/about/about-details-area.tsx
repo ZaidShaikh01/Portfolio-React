@@ -5,7 +5,7 @@ import type { AboutData } from '~/types/aboutData';
 
 const AboutDetailsArea = ({ section }: { section: AboutData }) => {
   return (
-    <div className='p-15 h-full w-full flex justify-center  items-start gap-18 '>
+    <div className='p-15 h-full w-full flex justify-center  items-start gap-18 overflow-scroll '>
       <div className='flex flex-col w-2/5 gap-20 justify-center items-center'>
         <p className='text-xl font-bold text-indigo-500'>{section.summary}</p>
         <p className='text-sm'>{section.details}</p>

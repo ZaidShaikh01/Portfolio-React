@@ -27,7 +27,7 @@ export const skillsData: AboutData = {
   details:
     'Languages: JavaScript, TypeScript, Java, C, Dart, SQL, Python. Web Technologies: React, Tailwind CSS, HTML, CSS. Mobile & Backend: Flutter, Firebase. Developer Tools: Git, GitHub, VS Code, IntelliJ IDEA. Core Concepts: Data Structures & Algorithms, Object-Oriented Programming, DBMS, and REST APIs.',
   downloadText: 'download-resume',
-  imgUrl: '/images/profile.jpg',
+  imgUrl: '/images/profile.jpeg',
 };
 
 export const experienceData: AboutData = {
@@ -37,7 +37,7 @@ export const experienceData: AboutData = {
   details:
     'Software Development Intern at Endava Solutions India, where I developed a responsive Spotify-inspired web application using HTML, CSS, and JavaScript, implementing interactive UI components, music-player functionality, dynamic search, and debounced user interactions. Previously worked as a Flutter Developer Intern at Techlyverse, developing and deploying 3 cross-platform applications for Android, iOS, and Web using Flutter and Firebase, with 2 applications published on the Google Play Store. Also worked as a Data Engineering Intern at Esther Analytical Data Systems, optimizing 10+ SQL queries and developing 5+ Power BI dashboards for KPI and business analysis. Gained practical experience with Agile/Scrum, debugging, testing, database systems, and software development practices.',
   downloadText: 'download-resume',
-  imgUrl: '/images/profile.jpg',
+  imgUrl: '/images/profile.jpeg',
 };
 
 export const projectsData: AboutData = {
@@ -47,7 +47,7 @@ export const projectsData: AboutData = {
   details:
     'StoreManager Pro: Developed a store management and point-of-sale application using React, TypeScript, Tailwind CSS, and Firebase, featuring inventory management, role-based access control, real-time updates, sales tracking, analytics, and report generation. Pokémon Explorer: Built a responsive React application using the PokéAPI with dynamic data fetching, search, filtering, loading states, error handling, and interactive UI components. Plant Disease Detection App: Developed a Flutter application using a custom-trained machine learning model with 14 classes and 3,000+ sample images, integrating Firebase Authentication and Google ML Kit for secure access and offline, on-device image classification with disease-specific recommendations.',
   downloadText: 'download-resume',
-  imgUrl: '/images/profile.jpg',
+  imgUrl: '/images/profile.jpeg',
 };
 
 export const emailData: AboutData = {
