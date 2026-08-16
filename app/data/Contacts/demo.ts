@@ -7,7 +7,7 @@ export const linkedInData: AboutData = {
   details:
     'Focused on learning modern web technologies including React, TypeScript, and Tailwind CSS. Regularly build personal projects to strengthen practical development skills and improve software design understanding.',
   downloadText: 'go-to-linkedIn',
-  imgUrl: '/images/profile.jpg',
+  imgUrl: '/images/profile.jpeg',
 };
 
 export const githubData: AboutData = {
@@ -17,7 +17,7 @@ export const githubData: AboutData = {
   details:
     'Enjoy exploring new frontend technologies, experimenting with animations, improving design skills, and working on projects that combine creativity with programming. Outside coding, I spend time sketching and working out.',
   downloadText: 'go-to-github',
-  imgUrl: '/images/profile.jpg',
+  imgUrl: '/images/profile.jpeg',
 };
 
 export const instaData: AboutData = {
@@ -27,5 +27,5 @@ export const instaData: AboutData = {
   details:
     'Enjoy exploring new frontend technologies, experimenting with animations, improving design skills, and working on projects that combine creativity with programming. Outside coding, I spend time sketching and working out.',
   downloadText: 'go-to-instagram',
-  imgUrl: '/images/profile.jpg',
+  imgUrl: '/images/profile.jpeg',
 };

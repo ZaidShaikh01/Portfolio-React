@@ -26,7 +26,7 @@ const ContactDetailsPage = ({ section }: { section: AboutData }) => {
             showMobileWarning={false}
             showTooltip
             displayOverlayContent
-            overlayContent={<p className='tilted-card-demo-text'>Berserk</p>}
+            overlayContent={<p className='tilted-card-demo-text'>Zaid</p>}
           />
 
           {/* <img

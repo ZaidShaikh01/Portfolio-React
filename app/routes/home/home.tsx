@@ -48,9 +48,9 @@ export default function Home() {
             </div>
             {/* Link Container */}
             <div className='flex flex-col gap-1'>
-              <p className='text-sm text-text-foreground'>
+              {/* <p className='text-sm text-text-foreground'>
                 // complete the game to continue
-              </p>
+              </p> */}
               <p className='text-sm text-text-foreground'>
                 // find my profile on Github:{' '}
               </p>
