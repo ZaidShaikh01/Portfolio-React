@@ -30,7 +30,7 @@ export default function Home() {
           <div>
             {/* Introduction container */}
             <div className=''>
-              <p className='text-base md:text-base lg:text-l text-text-foreground '>
+              <p className='text-base  md:text-base lg:text-l text-text-foreground '>
                 Hi all. I am
               </p>
 
@@ -54,11 +54,11 @@ export default function Home() {
               <p className='text-sm text-text-foreground'>
                 // find my profile on Github:{' '}
               </p>
-              <p className='flex gap-1'>
-                <span className='text-sm text-indigo-500'>const</span>
-                <span className='text-sm text-teal-400'>githubLink</span>
-                <span className='text-sm text-foreground'>=</span>
-                <span className='text-sm text-link-forward cursor-pointer hover:text-link-hover-forward'>
+              <p className='flex flex-wrap gap-1'>
+                <span className='text-xs lg:text-sm text-indigo-500'>const</span>
+                <span className='text-xs lg:text-sm text-teal-400'>githubLink</span>
+                <span className='text-xs lg:text-sm text-foreground'>=</span>
+                <span className='text-xs lg:text-sm text-link-forward cursor-pointer hover:text-link-hover-forward'>
                   <a href='https://github.com/ZaidShaikh01' target='_blank'>
                     https://github.com/ZaidShaikh01
                   </a>

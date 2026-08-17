@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <div className='flex flex-1 justify-between border-b border-b-stroke  '>
       <div className=' flex '>
-        <div className='name cursor-pointer  text-text-foreground mr-7 p-3 text-sm '>
-          _zaid-shaikh
+        <div className='name cursor-pointer  text-text-foreground mr-7 p-5 lg:p-3 text-2xl lg:text-sm '>
+          zaid-shaikh
         </div>
         <div className='hidden md:flex'>
           <div

@@ -6,7 +6,7 @@ import { SmoothCursor } from '~/components/ui/SmoothCursor';
 
 const LayoutPage = () => {
   return (
-    <div className='flex p-10 cursor-none  h-screen'>
+    <div className='flex p-3 lg:p-10 cursor-none  h-screen'>
       <ClickSpark>
         <div className='flex flex-col w-full h-full border rounded-xl bg-background border-stroke'>
           <header>
