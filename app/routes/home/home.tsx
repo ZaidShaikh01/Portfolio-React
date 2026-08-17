@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className='flex flex-col lg:flex-row gap-5  justify-center items-center lg:gap-30  xl:gap-55 md:p-19 h-full w-full'>
       {/* About Container */}
-      <div className='flex flex-col gap-5 xl:gap-12 '>
+      <div className='flex flex-col gap-5 xl:gap-12 ml-7 md:ml-0'>
         <AnimatedContent
           distance={100}
           direction='vertical'
@@ -29,20 +29,20 @@ export default function Home() {
         >
           <div>
             {/* Introduction container */}
-            <div className=''>
-              <p className='text-base  md:text-base lg:text-l text-text-foreground '>
+            <div className='mb-30 lg:mb-0'>
+              <p className='text-2xl lg:text-lg text-text-foreground '>
                 Hi all. I am
               </p>
 
               <div className='flex flex-col gap-1'>
                 <BlurText
                   text='Zaid Shaikh'
-                  className='text-3xl md:text-6xl xl:text-8xl'
+                  className='text-6xl xl:text-8xl'
                 />
 
                 <BlurText
                   text='> Front-end Developer'
-                  className='text-xl  md:text-3xl xl:text-4xl text-indigo-500'
+                  className='text-2xl  md:text-3xl xl:text-4xl text-indigo-500'
                 />
               </div>
             </div>
@@ -54,11 +54,11 @@ export default function Home() {
               <p className='text-sm text-text-foreground'>
                 // find my profile on Github:{' '}
               </p>
-              <p className='flex flex-wrap gap-1'>
-                <span className='text-xs lg:text-sm text-indigo-500'>const</span>
-                <span className='text-xs lg:text-sm text-teal-400'>githubLink</span>
-                <span className='text-xs lg:text-sm text-foreground'>=</span>
-                <span className='text-xs lg:text-sm text-link-forward cursor-pointer hover:text-link-hover-forward'>
+              <p className='flex flex-wrap gap-1 '>
+                <span className='text-lg lg:text-sm text-indigo-500'>const</span>
+                <span className='text-lg lg:text-sm text-teal-400'>githubLink</span>
+                <span className='text-lg lg:text-sm text-foreground'>=</span>
+                <span className='text-lg lg:text-sm text-link-forward cursor-pointer hover:text-link-hover-forward'>
                   <a href='https://github.com/ZaidShaikh01' target='_blank'>
                     https://github.com/ZaidShaikh01
                   </a>
