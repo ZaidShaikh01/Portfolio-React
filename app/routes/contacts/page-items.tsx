@@ -37,14 +37,14 @@ const PageItems = ({ setSection }: pageItemsProps) => {
   ];
 
   return (
-    <div className='flex '>
+    <div className='flex w-full lg:w-56'>
       {/*Accordian Container */}
 
-      <div className='w-52 border-r border-r-stroke '>
+      <div className='w-full lg:w-52 lg:border-r lg:border-r-stroke '>
         {accordian.map((item) => (
           <div key={item.name} className='personal-accordian'>
             <button
-              className='w-full flex items-center p-3 gap-1 text-sm text-gray-300 border-b border-b-stroke'
+              className='w-full flex items-center p-3 gap-1 text-xl lg:text-sm text-gray-300 border-b border-b-stroke'
               onClick={item.onClick}
             >
               {' '}
@@ -65,7 +65,7 @@ const PageItems = ({ setSection }: pageItemsProps) => {
         {/* Send me an email text */}
         <button
           onClick={() => setSection(null)}
-          className='w-full flex justify-center p-3  text-l text-gray-300 border-b border-b-stroke'
+          className='w-full flex justify-center p-3  text-xl lg:text-l text-gray-300 border-b border-b-stroke'
         >
           send-me-a-mail
         </button>

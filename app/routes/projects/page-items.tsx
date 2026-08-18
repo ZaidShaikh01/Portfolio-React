@@ -48,7 +48,7 @@ const PageItems = ({ technologies, setSelectedOptions }: PageItemsProps) => {
                   }
                 }}
               />
-              <label className='text-gray-400 text-xl ml-4' htmlFor={tech}>
+              <label className='text-gray-400 text-xl lg:text-base ml-4' htmlFor={tech}>
                 {tech}
               </label>
             </div>

@@ -2,14 +2,14 @@ const ContactForm = () => {
   return (
     <div className='h-full w-full'>
       {/* Upper section */}
-      <div className='h-11 w-full border-b border-b-stroke'></div>
+      <div className='hidden lg:block h-11 w-full border-b border-b-stroke'></div>
 
       {/* Center Section */}
-      <div className='h-full w-full flex flex-col justify-center items-center'>
+      <div className='h-full w-full text-lg lg:text-base flex flex-col justify-center items-center'>
         <form
           action='https://formspree.io/f/xljrnnje'
           method='POST'
-          className='w-2/5 flex flex-col gap-3'
+          className='w-4/5  lg:w-2/5 flex flex-col gap-3'
         >
           <div className='w-full flex flex-col gap-2'>
             <label htmlFor='name'>_name:</label>
@@ -41,8 +41,7 @@ const ContactForm = () => {
 
           <button
             type='submit'
-            className='w-2/5 p-2 text-sm bg-stroke rounded-xl mt-5 h-15 hover:bg-gray-700'
-            
+            className='w-3/5 lg:w-4/5 p-2 text-lg lg:text-sm bg-stroke rounded-xl mt-5 h-15 hover:bg-gray-700'
           >
             submit-message
           </button>

@@ -78,22 +78,25 @@ const ContactPage = () => {
   };
 
   return (
-    <div className='h-full w-full flex '>
+    <div className='h-full w-full flex flex-col lg:flex-row'>
       {/* handle section can also return null */}
       <PageItems setSection={handleSection} />
       {/* if everyhing is null it will open the form page */}
-      {!section ? (
-        <div className='h-full w-full'>
-          <ContactForm />
-        </div>
-      ) : (
-        <PersonalInfo
-          tabs={tabs}
-          section={section}
-          setTabSection={onTabSelect}
-          onTabRemove={onTabRemove}
-        />
-      )}
+
+      <div className='w-full h-full'>
+        {!section ? (
+          <div className='h-full w-full'>
+            <ContactForm />
+          </div>
+        ) : (
+          <PersonalInfo
+            tabs={tabs}
+            section={section}
+            setTabSection={onTabSelect}
+            onTabRemove={onTabRemove}
+          />
+        )}
+      </div>
     </div>
   );
 };
