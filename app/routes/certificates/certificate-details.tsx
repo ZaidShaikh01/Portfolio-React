@@ -7,9 +7,9 @@ type CertificateDetailsProps = {
 
 const CertificateDetails = ({ section }: CertificateDetailsProps) => {
   return (
-    <div className='flex-9 flex justify-center items-center flex-col gap-8 h-full w-full p-5'>
-      <div className='text-3xl text-center'>{section.certificateTitle}</div>
-      <div className='flex  w-full justify-around'>
+    <div className='flex-9 flex justify-center items-center flex-col gap-5 lg:gap-8 h-full w-full p-5'>
+      <div className='text-2xl lg:text-3xl text-center'>{section.certificateTitle}</div>
+      <div className='flex flex-col lg:flex-row  w-full justify-around'>
         <div>
           <span className='text-xl'>
             {section.endDate ? 'From -' : 'Issued Date - '}{' '}
@@ -29,9 +29,9 @@ const CertificateDetails = ({ section }: CertificateDetailsProps) => {
       </div>
 
       {/* Details of certificate & Image preview*/}
-      <div className='flex justify-center items-center gap-20 w-full px-30 '>
-        <div className='detials w-2/4 '>{section.certificateDetails}</div>
-        <div className='image-container w-1/4'>
+      <div className='flex justify-center items-center gap-20 w-full  lg:px-30 '>
+        <div className='detials w-full text-xl lg:text-base lg:w-2/4 '>{section.certificateDetails}</div>
+        <div className='image-container hidden lg:block w-1/4'>
           <img
             src={section.certificateLogoURL}
             className=' w-full object-cover'
@@ -40,7 +40,7 @@ const CertificateDetails = ({ section }: CertificateDetailsProps) => {
         </div>
       </div>
       {/* link to certificate */}
-      <InteractiveHoverButton className='w-60 text-sm h-13'>
+      <InteractiveHoverButton className='w-60  lg:text-sm h-13'>
         {' '}
         Download certificate
       </InteractiveHoverButton>

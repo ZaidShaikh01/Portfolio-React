@@ -31,7 +31,7 @@ const CertificatePage = () => {
   ];
 
   return (
-    <div className='w-full h-full flex '>
+    <div className='w-full h-full flex flex-col lg:flex-row '>
       {/* Side bar */}
       <div className='flex-1  border-r border-r-stroke h-full w-full'>
         <PageItems pageList={pageList} setSection={setSeciton} />
@@ -43,11 +43,11 @@ const CertificatePage = () => {
         <CertificateDetails section={section} />
       ) : (
         // When nothing is there
-        <div className='flex-9 h-full w-full'>
+        <div className='flex-9 lg:h-full w-full p-5'>
           {' '}
           <BlurText
             text='Select a certificate.'
-            className='w-full h-full flex justify-center items-center text-6xl text-gray-300'
+            className='w-full lg:h-full flex lg:justify-center items-center text-5xl lg:text-6xl text-gray-300'
           />
         </div>
       )}

@@ -23,7 +23,7 @@ const PageItems = ({ pageList, setSection }: pageItemsProps) => {
         <div className='border-b border-b-stroke'>
           <button
             onClick={item.onClick}
-            className='w-full flex text-sm justify-center items-center border-b border-b-stroke  text-gray-400 p-2'
+            className='w-full flex text-xl lg:text-sm justify-start lg:justify-center items-center border-b border-b-stroke  text-gray-400 p-2'
           >
             {/* Drop down Icon  */}
             <span>{item.isOpen ? <FaAngleDown /> : <FaAngleRight />}</span>
@@ -31,23 +31,23 @@ const PageItems = ({ pageList, setSection }: pageItemsProps) => {
           </button>
           {/* DropDown Items */}
           {item.isOpen && (
-            <div className='dropdown items'>
+            <div className='w-full'>
               {/* Company Drop down */}
               {item.setcionList.map((item) => (
                 <button
                   onClick={() => {
                     setSection(item.sectionData);
                   }}
-                  className='flex justify-around w-full my-3 items-center'
+                  className='flex justify-start  lg:justify-around w-full my-3 mx-5 lg:mx-0 items-center'
                 >
-                  <div className='w-5'>
+                  <div className='w-7 lg:w-5'>
                     <img
                       src={item.companyLogoUrl}
                       className='object-fit w-full'
                       alt={item.companyName}
                     />
                   </div>
-                  <div className='text-sm  text-gray-400'>
+                  <div className='text-xl ml-2 lg:text-sm  text-gray-400'>
                     {item.companyName}
                   </div>
                 </button>
