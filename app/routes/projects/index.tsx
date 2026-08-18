@@ -31,7 +31,7 @@ const ProjectPage = () => {
   });
 
   return (
-    <div className='flex w-full h-full'>
+    <div className='flex flex-col lg:flex-row w-full h-full'>
       {/* Left side container */}
       <PageItems
         setSelectedOptions={setSelectedOption}
@@ -44,7 +44,7 @@ const ProjectPage = () => {
 
         {/* Projects Details will be here */}
 
-        <div className='grid grid-cols-3  gap-6 w-full h-full overflow-y-auto '>
+        <div className='grid  lg:grid-cols-3  gap-6 w-full h-full overflow-y-auto '>
           {filteredProjectData.map((project, i) => (
             <div className='flex flex-col gap-2'>
               {/* Label Text */}

@@ -15,10 +15,10 @@ const PageItems = ({ technologies, setSelectedOptions }: PageItemsProps) => {
     setIsOpen((prev) => !prev);
   };
   return (
-    <div className='w-45 border-r border-r-stroke'>
+    <div className='w-full lg:w-45 lg:border-r lg:border-r-stroke'>
       <div className='personal-accordian'>
         <button
-          className='w-full flex items-center p-3 gap-1 text-sm text-gray-300 border-b border-b-stroke'
+          className='w-full flex items-center p-3 gap-1 text-2xl lg:text-sm text-gray-300 border-b border-b-stroke'
           onClick={handleClick}
         >
           {' '}
@@ -31,7 +31,7 @@ const PageItems = ({ technologies, setSelectedOptions }: PageItemsProps) => {
           {technologies.map((tech: string) => (
             <div
               key={tech}
-              className='flex gap-2 items-center justify-start p-2'
+              className='flex gap-2  items-center justify-start p-2'
             >
               <input
                 type='checkbox'
@@ -48,7 +48,7 @@ const PageItems = ({ technologies, setSelectedOptions }: PageItemsProps) => {
                   }
                 }}
               />
-              <label className='text-gray-400 ml-4' htmlFor={tech}>
+              <label className='text-gray-400 text-xl ml-4' htmlFor={tech}>
                 {tech}
               </label>
             </div>
