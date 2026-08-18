@@ -70,9 +70,9 @@ const AboutPage = () => {
   };
 
   return (
-    <div className='h-full w-full flex flex-col items-center gap-50  lg:flex-row'>
+    <div className='h-full w-full flex flex-col gap-3 lg:flex-row lg:gap-0'>
       <PageItems setSection={handleSection} />
-      <div className='w-full '>
+      <div className='w-full lg:h-full'>
         {!section ? (
           <BlurText
             text='Select a section.'

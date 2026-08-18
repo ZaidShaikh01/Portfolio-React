@@ -14,7 +14,7 @@ const DetailsTab = ({ tabs, onTabSelect, onTabRemove }: DetailsTabProp) => {
 
   return (
     <div>
-      <div className='flex border-b border-b-stroke w-full'>
+      <div className='hidden lg:flex border-b border-b-stroke w-full'>
         {/* A single tab */}
         {tabs.map((item) => (
           <div

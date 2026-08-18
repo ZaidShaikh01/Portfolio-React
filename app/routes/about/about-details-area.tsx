@@ -5,13 +5,13 @@ import type { AboutData } from '~/types/aboutData';
 
 const AboutDetailsArea = ({ section }: { section: AboutData }) => {
   return (
-    <div className='p-15 h-full w-full flex justify-center  items-start gap-18 overflow-scroll '>
-      <div className='flex flex-col w-2/5 gap-20 justify-center items-center'>
+    <div className='lg:p-15 h-full w-full flex flex-col lg:flex-row justify-center  items-start gap-18 overflow-scroll '>
+      <div className='flex flex-col w-full p-2 lg:p-0 lg:w-2/5 gap-20 justify-center items-center'>
         <p className='text-xl font-bold text-indigo-500'>{section.summary}</p>
         <p className='text-sm'>{section.details}</p>
         <InteractiveHoverButton>{section.downloadText}</InteractiveHoverButton>
       </div>
-      <div className='h-full'>
+      <div className='hidden lg:block h-full'>
         <BorderGlow className='h-4/5 rounded-lg overflow-hidden'>
           <TiltedCard
             imageSrc={section.imgUrl}
