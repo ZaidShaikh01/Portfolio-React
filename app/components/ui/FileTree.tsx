@@ -115,7 +115,7 @@ const TreeNode = ({ item, selectedFile, onFileSelect }: TreeNodeProps) => {
   return (
     <div className='text-gray-700 dark:text-gray-300 relative'>
       <div
-        className={`flex items-center py-1.5 px-2 rounded-md cursor-pointer transition-colors duration-150 ${
+        className={`flex items-center  py-1.5 px-2 rounded-md cursor-pointer transition-colors duration-150 ${
           isSelected
             ? 'bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-white'
             : 'hover:bg-gray-100 dark:hover:bg-gray-800'
@@ -128,9 +128,9 @@ const TreeNode = ({ item, selectedFile, onFileSelect }: TreeNodeProps) => {
           ) : (
             <div className='w-4 shrink-0'></div>
           )}
-          <div className='flex items-center ml-1'>
+          <div className='flex  items-center ml-1'>
             <TreeIcon item={item} isOpen={isOpen} />
-            <span className='text-sm ml-1.5'>{item.name}</span>
+            <span className='text-xl lg:text-sm ml-1.5'>{item.name}</span>
           </div>
         </div>
       </div>
@@ -138,7 +138,7 @@ const TreeNode = ({ item, selectedFile, onFileSelect }: TreeNodeProps) => {
       <div
         className={`pl-4 relative overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px]' : 'max-h-0'}`}
       >
-        <div className='absolute left-[13px] top-0 bottom-0 w-px bg-gray-300 dark:bg-gray-800'></div>
+        <div className='absolute left-[13px] top-0 bottom-0 w-px bg-gray-300 dark:bg-gray-800 '></div>
         {isFolder &&
           isOpen &&
           item.children &&

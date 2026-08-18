@@ -70,22 +70,23 @@ const AboutPage = () => {
   };
 
   return (
-    <div className='h-full w-full flex '>
+    <div className='h-full w-full flex flex-col items-center gap-50  lg:flex-row'>
       <PageItems setSection={handleSection} />
-
-      {!section ? (
-        <BlurText
-          text='Select a section.'
-          className='w-full h-full flex justify-center items-center text-6xl text-gray-300'
-        />
-      ) : (
-        <PersonalInfo
-          tabs={tabs}
-          section={section}
-          setTabSection={onTabSelect}
-          onTabRemove={onTabRemove}
-        />
-      )}
+      <div className='w-full '>
+        {!section ? (
+          <BlurText
+            text='Select a section.'
+            className='w-full h-full flex justify-center items-center text-6xl text-gray-300'
+          />
+        ) : (
+          <PersonalInfo
+            tabs={tabs}
+            section={section}
+            setTabSection={onTabSelect}
+            onTabRemove={onTabRemove}
+          />
+        )}
+      </div>
     </div>
   );
 };

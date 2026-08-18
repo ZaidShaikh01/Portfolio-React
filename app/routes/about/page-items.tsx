@@ -38,19 +38,19 @@ const PageItems = ({ setSection }: pageItemsProps) => {
   // const leftIcons = [<FaTerminal />, <FaCircle />, <FaGamepad />];
 
   return (
-    <div className='flex '>
+    <div className='flex w-full lg:w-50'>
       {/* Left icons */}
       {/* <div className='flex flex-col gap-5 p-3 border-r border-r-stroke '>
         {leftIcons.map((item) => item)}
       </div> */}
       {/*Accordian Container */}
 
-      <div className='w-52 border-r border-r-stroke '>
+      <div className='w-full lg:w-52 lg:border-r lg:border-r-stroke  '>
         {/* Using Map to display all the left Items */}
         {accordian.map((item) => (
           <div key={item.name} className='personal-accordian'>
             <button
-              className='w-full flex items-center p-3 gap-1 text-sm text-gray-300 border-b border-b-stroke'
+              className='w-full flex items-center p-3 gap-1 text-xl lg:text-sm text-gray-300 border-b border-b-stroke'
               onClick={item.onClick}
             >
               {' '}
