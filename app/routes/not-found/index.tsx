@@ -2,8 +2,8 @@ import AnimatedContent from '~/components/ui/AnimatedContent';
 
 const NotFoundPage = () => {
   return (
-    <div className='w-full h-full flex gap-20 justify-center items-center  '>
-      <div className=''>
+    <div className='w-full h-full flex flex-col lg:flex-row gap-20 justify-center items-center  '>
+      <div className='p-3 lg:p-0'>
         <img
           src='/public/images/404.png'
           alt='not-found.png'
@@ -12,7 +12,31 @@ const NotFoundPage = () => {
       </div>
 
       <AnimatedContent>
-        <code className='code'>
+        <code className='p-3 flex flex-col gap-5 lg:hidden'>
+          <div className='text-gray-400 text-2xl'>
+            
+            <span className='mr-2 text-indigo-500'>Throw</span>
+            <span className='mr-2 text-indigo-500'>new</span>
+            
+            <span className=' text-rose-400'>findPage</span>
+            <span className='text-rose-50'>(</span>
+            <span className='text-teal-400'>'404: PageNotFoundError 😓'</span>
+            <span className='text-rose-50'>)</span>
+            <span className=' text-rose-50'>;</span>
+          </div>
+          <div className='text-gray-400 text-2xl'>           
+            
+            <span className=' text-rose-400'>goBack</span>
+            <span className='text-rose-50'>(</span>
+            <span className='text-rose-50'>)  || </span>
+            
+            <span className=' text-rose-400'>goHome</span>
+            <span className='text-rose-50'>(</span>
+            <span className='text-rose-50'>)</span>
+            <span className=' text-rose-50'>;</span>
+          </div>
+        </code>
+        <code className='code hidden'>
           <div className='text-gray-400 text-xl'>
             <span className='mr-5'>1</span>
             <span className='mr-2 text-indigo-500'>const</span>
