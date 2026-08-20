@@ -1,4 +1,5 @@
 import AnimatedContent from '~/components/ui/AnimatedContent';
+import { Link } from 'react-router';
 
 const NotFoundPage = () => {
   return (
@@ -14,26 +15,22 @@ const NotFoundPage = () => {
       <AnimatedContent>
         <code className='p-3 flex flex-col gap-5 lg:hidden'>
           <div className='text-gray-400 text-2xl'>
-            
             <span className='mr-2 text-indigo-500'>Throw</span>
             <span className='mr-2 text-indigo-500'>new</span>
-            
+
             <span className=' text-rose-400'>findPage</span>
             <span className='text-rose-50'>(</span>
             <span className='text-teal-400'>'404: PageNotFoundError 😓'</span>
             <span className='text-rose-50'>)</span>
             <span className=' text-rose-50'>;</span>
           </div>
-          <div className='text-gray-400 text-2xl'>           
-            
-            <span className=' text-rose-400'>goBack</span>
-            <span className='text-rose-50'>(</span>
-            <span className='text-rose-50'>)  || </span>
-            
-            <span className=' text-rose-400'>goHome</span>
-            <span className='text-rose-50'>(</span>
-            <span className='text-rose-50'>)</span>
-            <span className=' text-rose-50'>;</span>
+          <div className='text-gray-400 text-2xl'>
+            <Link to='/'>
+              <span className=' text-rose-400'>goHome</span>
+              <span className='text-rose-50'>(</span>
+              <span className='text-rose-50'>)</span>
+              <span className=' text-rose-50'>;</span>
+            </Link>
           </div>
         </code>
         <code className='code hidden'>
