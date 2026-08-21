@@ -10,20 +10,20 @@ import { FaBars } from 'react-icons/fa6';
 const Header = () => {
   const location = useLocation();
   const { pathname } = location;
-  
+
   return (
     <div className='flex lg:flex-1 justify-between border-b border-b-stroke  '>
-      <div className='flex '>
+      <div className='flex flex-1 items-center justify-around'>
         <div className='name cursor-pointer text-text-foreground mr-7 p-5 lg:p-3 text-2xl lg:text-sm '>
           zaid-shaikh
         </div>
 
         {/* Phone layout header */}
-        <div className='flex ml-20 items-center  lg:hidden '>
+        <div className='flex  items-center  lg:hidden '>
           <DropdownMenu
             trigger={
-              <button className='px-4 py-2 bg-blue-500 text-white rounded'>
-                <FaBars />
+              <button className='px-4 py-2  text-white rounded'>
+                <FaBars className='text-3xl' />
               </button>
             }
           >
