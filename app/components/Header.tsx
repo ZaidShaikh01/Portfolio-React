@@ -22,20 +22,40 @@ const Header = () => {
         <div className='flex  items-center  lg:hidden '>
           <DropdownMenu
             trigger={
-              <button className='px-4 py-2  text-white rounded'>
+              <button className='px-4 py-2  text-gray-500 rounded'>
                 <FaBars className='text-3xl' />
               </button>
             }
           >
-            <DropdownMenuItem onClick={() => console.log('Item 1')}>
-              Item 1
+            <div className='border-b border-b-stroke'>
+              <DropdownMenuItem>
+                <span className='text-gray-400 text-lg '># navigate:</span>
+              </DropdownMenuItem>
+            </div>
+            <DropdownMenuItem>
+              <Link className='text-white text-lg' to='/'>
+                _hello
+              </Link>
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => console.log('Item 2')}>
-              Item 2
+            <DropdownMenuItem>
+              <Link className='text-white text-lg' to='/about'>
+                _about-me
+              </Link>
             </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => console.log('Item 3')}>
-              Item 3
+            <DropdownMenuItem>
+              <Link className='text-white text-lg' to='/projects'>
+                _projects
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link className='text-white text-lg' to='/certificates'>
+                _certificates
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link className='text-white text-lg' to='/contacts'>
+                _contact-me
+              </Link>
             </DropdownMenuItem>
           </DropdownMenu>
         </div>
