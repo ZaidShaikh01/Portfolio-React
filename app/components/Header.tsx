@@ -1,16 +1,46 @@
 import { Link } from 'react-router';
 import { useLocation } from 'react-router';
+import {
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from './ui/DropDown';
+import { FaBars } from 'react-icons/fa6';
 
 const Header = () => {
   const location = useLocation();
   const { pathname } = location;
-  console.log(pathname);
+  
   return (
-    <div className='flex flex-1 justify-between border-b border-b-stroke  '>
-      <div className=' flex '>
-        <div className='name cursor-pointer  text-text-foreground mr-7 p-5 lg:p-3 text-2xl lg:text-sm '>
+    <div className='flex lg:flex-1 justify-between border-b border-b-stroke  '>
+      <div className='flex '>
+        <div className='name cursor-pointer text-text-foreground mr-7 p-5 lg:p-3 text-2xl lg:text-sm '>
           zaid-shaikh
         </div>
+
+        {/* Phone layout header */}
+        <div className='flex ml-20 items-center  lg:hidden '>
+          <DropdownMenu
+            trigger={
+              <button className='px-4 py-2 bg-blue-500 text-white rounded'>
+                <FaBars />
+              </button>
+            }
+          >
+            <DropdownMenuItem onClick={() => console.log('Item 1')}>
+              Item 1
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => console.log('Item 2')}>
+              Item 2
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => console.log('Item 3')}>
+              Item 3
+            </DropdownMenuItem>
+          </DropdownMenu>
+        </div>
+
+        {/* Web Layout header */}
         <div className='hidden md:flex'>
           <div
             className={`p-3 border-l cursor-pointer hover:border-b hover:border-b-cyan-500 border-l-stroke text-sm border-r text-text-foreground border-r-stroke 
