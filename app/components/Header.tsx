@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div className='flex lg:flex-1 justify-between border-b border-b-stroke  '>
-      <div className='flex flex-1 items-center justify-around'>
+      <div className='flex flex-1 items-center justify-around lg:justify-start'>
         <div className='name cursor-pointer text-text-foreground mr-7 p-5 lg:p-3 text-2xl lg:text-sm '>
           zaid-shaikh
         </div>
@@ -28,7 +28,7 @@ const Header = () => {
             }
           >
             <div className='border-b border-b-stroke'>
-              <DropdownMenuItem>
+              <DropdownMenuItem >
                 <span className='text-gray-400 text-lg '># navigate:</span>
               </DropdownMenuItem>
             </div>
