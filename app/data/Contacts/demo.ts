@@ -7,6 +7,7 @@ export const linkedInData: AboutData = {
   details:
     'Focused on learning modern web technologies including React, TypeScript, and Tailwind CSS. Regularly build personal projects to strengthen practical development skills and improve software design understanding.',
   downloadText: 'go-to-linkedIn',
+  downloadLink: 'https://www.linkedin.com/in/zaidshaikh01/',
   imgUrl: '/images/profile.jpeg',
 };
 
@@ -17,6 +18,7 @@ export const githubData: AboutData = {
   details:
     'Enjoy exploring new frontend technologies, experimenting with animations, improving design skills, and working on projects that combine creativity with programming. Outside coding, I spend time sketching and working out.',
   downloadText: 'go-to-github',
+  downloadLink: 'https://github.com/ZaidShaikh01',
   imgUrl: '/images/profile.jpeg',
 };
 
@@ -27,5 +29,6 @@ export const instaData: AboutData = {
   details:
     'Enjoy exploring new frontend technologies, experimenting with animations, improving design skills, and working on projects that combine creativity with programming. Outside coding, I spend time sketching and working out.',
   downloadText: 'go-to-instagram',
+  downloadLink: 'https://www.instagram.com/zaids1406/',
   imgUrl: '/images/profile.jpeg',
 };

@@ -17,7 +17,7 @@ const PersonalInfo = ({
   setTabSection,
   onTabRemove,
 }: PersonalInfoProps) => {
-  console.log('Set Section ', section.details);
+ 
 
   return (
     <div className=' lg:flex  flex-col w-full h-full '>

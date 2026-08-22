@@ -9,7 +9,11 @@ const AboutDetailsArea = ({ section }: { section: AboutData }) => {
       <div className='flex flex-col w-full p-2 lg:p-0 lg:w-2/5 gap-20 justify-center items-center'>
         <p className='text-xl font-bold text-indigo-500'>{section.summary}</p>
         <p className='text-sm'>{section.details}</p>
-        <InteractiveHoverButton>{section.downloadText}</InteractiveHoverButton>
+        <InteractiveHoverButton>
+          <a href={`${section.downloadLink}`} target='_blank'>
+            {section.downloadText}
+          </a>
+        </InteractiveHoverButton>
       </div>
       <div className='hidden lg:block h-full'>
         <BorderGlow className='h-4/5 rounded-lg overflow-hidden'>

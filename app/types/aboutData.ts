@@ -3,5 +3,6 @@ export type AboutData ={
     summary: string,
     details: string,
     downloadText: string,
+    downloadLink: string,
     imgUrl: string
 }

@@ -33,7 +33,7 @@ const NotFoundPage = () => {
             </Link>
           </div>
         </code>
-        <code className='code hidden'>
+        <code className='code hidden lg:block'>
           <div className='text-gray-400 text-xl'>
             <span className='mr-5'>1</span>
             <span className='mr-2 text-indigo-500'>const</span>
