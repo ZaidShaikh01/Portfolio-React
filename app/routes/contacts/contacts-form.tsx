@@ -41,7 +41,7 @@ const ContactForm = () => {
 
           <button
             type='submit'
-            className='w-3/5 lg:w-4/5 p-2 text-lg lg:text-sm bg-stroke rounded-xl mt-5 h-15 hover:bg-gray-700'
+            className='w-3/5 lg:w-4/5 p-2 text-lg lg:text-sm bg-stroke rounded-xl my-5 h-15 hover:bg-gray-700'
           >
             submit-message
           </button>
