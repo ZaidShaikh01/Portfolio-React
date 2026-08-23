@@ -42,7 +42,7 @@ const CertificateDetails = ({ section }: CertificateDetailsProps) => {
         </div>
 
         {/* Certificate Image (only on large screens) */}
-        <div className='hidden lg:block w-48 flex-shrink-0'>
+        <div className='hidden lg:block w-48 shrink-0'>
           <img
             src={section.certificateLogoURL}
             alt={section.certificateTitle}
