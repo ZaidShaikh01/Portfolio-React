@@ -3,4 +3,5 @@ export type ProjectData = {
   projectName: string;
   summary: string;
   imgUrl: string;
+  githubUrl:string;
 };

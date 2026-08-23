@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa6';
-import type { ProjectData } from '~/types/ProjectData';
-import type { Tab } from '~/types/Tabs';
+
 
 type PageItemsProps = {
   technologies: string[];
