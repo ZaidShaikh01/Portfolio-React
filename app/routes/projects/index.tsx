@@ -48,7 +48,7 @@ const ProjectPage = () => {
                 <span className='text-gray-400'>// {project.projectName}</span>
               </p>
               {/* Actual Project Container */}
-              <div className='bg-black rounded-2xl flex flex-col h-full max-h-90'>
+              <div className='bg-black rounded-2xl flex flex-col h-full max-h-100'>
                 {/* Image container */}
                 <div className='flex mt-5 items-center justify-center w-full'>
                   <img
@@ -59,7 +59,7 @@ const ProjectPage = () => {
                 </div>
                 {/* Details contailer */}
 
-                <div className='m-6 flex flex-col flex-1 justify-start items-start gap-4'>
+                <div className='m-6  flex flex-col flex-1 justify-start items-start gap-4'>
                   <p className='text-gray-400 text-sm flex-1'>
                     {project.summary}
                   </p>
@@ -68,7 +68,7 @@ const ProjectPage = () => {
                     href={project.githubUrl}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='p-2 text-sm bg-stroke rounded-xl text-center hover:bg-indigo-600 transition-colors duration-200'
+                    className='p-2  text-sm bg-stroke rounded-xl text-center hover:bg-indigo-600 transition-colors duration-200'
                   >
                     View Project
                   </a>
