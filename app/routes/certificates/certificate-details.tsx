@@ -6,7 +6,7 @@ type CertificateDetailsProps = {
 };
 const CertificateDetails = ({ section }: CertificateDetailsProps) => {
   return (
-    <div className='flex flex-col items-center gap-5 sm:gap-6 lg:gap-8 w-full p-4 sm:p-6 lg:p-8 pb-24 overflow-y-auto'>
+    <div className='flex flex-col lg:justify-center items-center gap-5 sm:gap-6 lg:gap-8 w-full p-4 sm:p-6 lg:p-8 pb-24 overflow-y-auto'>
       {/* Certificate Title */}
       <h2 className='text-xl sm:text-2xl lg:text-3xl font-medium text-center px-2'>
         {section.certificateTitle}
@@ -50,7 +50,7 @@ const CertificateDetails = ({ section }: CertificateDetailsProps) => {
 
       {/* Download Button */}
       <a
-        href={section.certificateLogoURL}
+        href={section.certificateURL}
         target='_blank'
         rel='noopener noreferrer'
         className='mt-2 mb-4 px-8 py-3 text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition-colors duration-200'

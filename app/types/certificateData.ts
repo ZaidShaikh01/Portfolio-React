@@ -4,4 +4,5 @@ export type certificateData = {
   endDate?: Date;
   certificateDetails: string;
   certificateLogoURL: string;
+  certificateURL: string;
 };
