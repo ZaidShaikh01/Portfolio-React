@@ -1,6 +1,5 @@
 import type { certificateData } from '~/types/certificateData';
 
-
 export const endavaData: certificateData = {
   certificateTitle: 'Internship Certificate - Endava',
   beginDate: new Date(2026, 0, 1),
@@ -40,7 +39,8 @@ export const htmlCssData: certificateData = {
   certificateDetails:
     'Completed training in modern HTML and CSS, covering the fundamentals and practical techniques used to build structured, responsive, and modern web interfaces.',
   certificateLogoURL: '/images/OReilly_logo_rgb.png',
-  certificateURL: '', // Add Credly link when you have it
+  certificateURL:
+    'https://www.credly.com/badges/3f5f5d96-a025-41d5-8bfd-4cb47807b749/public_url',
 };
 
 export const javascriptData: certificateData = {
@@ -50,7 +50,8 @@ export const javascriptData: certificateData = {
   certificateDetails:
     'Completed training in modern JavaScript with a focus on core language concepts, programming fundamentals, DOM manipulation, and building interactive web applications.',
   certificateLogoURL: '/images/OReilly_logo_rgb.png',
-  certificateURL: '', // Add Credly link when you have it
+  certificateURL:
+    'https://www.credly.com/badges/dba23bf8-3945-42ec-8792-2ee2cb849a03/public_url',
 };
 
 export const flutterMasterclassData: certificateData = {
