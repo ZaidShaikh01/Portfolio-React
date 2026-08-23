@@ -7,41 +7,52 @@ type CertificateDetailsProps = {
 
 const CertificateDetails = ({ section }: CertificateDetailsProps) => {
   return (
-    <div className='flex-9 flex justify-center items-center flex-col gap-5 lg:gap-8 h-full w-full p-5'>
-      <div className='text-2xl lg:text-3xl text-center'>{section.certificateTitle}</div>
-      <div className='flex flex-col lg:flex-row  w-full justify-around'>
+    <div className='flex flex-col justify-center items-center gap-6 lg:gap-8 h-full w-full p-5 lg:p-8'>
+      {/* Certificate Title */}
+      <h2 className='text-2xl lg:text-3xl font-medium text-center'>
+        {section.certificateTitle}
+      </h2>
+
+      {/* Dates */}
+      <div className='flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-10 text-lg lg:text-xl'>
         <div>
-          <span className='text-xl'>
-            {section.endDate ? 'From -' : 'Issued Date - '}{' '}
+          <span className='text-gray-400'>
+            {section.endDate ? 'From - ' : 'Issued Date - '}
           </span>
-          <span className='text-indigo-500 text-xl'>
+          <span className='text-indigo-500'>
             {section.beginDate.toLocaleDateString()}
-          </span>{' '}
+          </span>
         </div>
+
         {section.endDate && (
           <div>
-            <span className='text-xl'>To - </span>
-            <span className='text-indigo-500 text-xl'>
+            <span className='text-gray-400'>To - </span>
+            <span className='text-indigo-500'>
               {section.endDate.toLocaleDateString()}
             </span>
           </div>
         )}
       </div>
 
-      {/* Details of certificate & Image preview*/}
-      <div className='flex justify-center items-center gap-20 w-full  lg:px-30 '>
-        <div className='detials w-full text-xl lg:text-base lg:w-2/4 '>{section.certificateDetails}</div>
-        <div className='image-container hidden lg:block w-1/4'>
+      {/* Details + Image */}
+      <div className='flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 w-full max-w-5xl'>
+        {/* Certificate Details */}
+        <div className='text-base lg:text-lg text-gray-300 leading-relaxed text-center lg:text-left w-full lg:w-1/2'>
+          {section.certificateDetails}
+        </div>
+
+        {/* Certificate Image (only on large screens) */}
+        <div className='hidden lg:block w-48 flex-shrink-0'>
           <img
             src={section.certificateLogoURL}
-            className=' w-full object-cover'
             alt={section.certificateTitle}
+            className='w-full h-auto object-contain rounded-lg'
           />
         </div>
       </div>
-      {/* link to certificate */}
-      <InteractiveHoverButton className='w-60  lg:text-sm h-13'>
-        {' '}
+
+      {/* Download Button */}
+      <InteractiveHoverButton className='w-60 h-12 lg:text-sm mt-2'>
         Download certificate
       </InteractiveHoverButton>
     </div>

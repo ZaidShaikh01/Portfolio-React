@@ -31,25 +31,28 @@ const PageItems = ({ pageList, setSection }: pageItemsProps) => {
           </button>
           {/* DropDown Items */}
           {item.isOpen && (
-            <div className='w-full'>
-              {/* Company Drop down */}
+            <div className=' w-full'>
               {item.setcionList.map((item) => (
                 <button
+                  key={item.companyName}
                   onClick={() => {
                     setSection(item.sectionData);
                   }}
-                  className='flex justify-start  lg:justify-around w-full my-3 mx-5 lg:mx-0 items-center'
+                  className='flex items-center ml-3 gap-3 w-full my-3 px-5 lg:px-0'
                 >
-                  <div className='w-7 lg:w-5'>
+                  {/* Fixed width icon container */}
+                  <div className='w-7 h-7 lg:w-5 lg:h-5 shrink-0'>
                     <img
                       src={item.companyLogoUrl}
-                      className='object-fit w-full'
+                      className='w-full h-full object-contain'
                       alt={item.companyName}
                     />
                   </div>
-                  <div className='text-xl ml-2 lg:text-sm  text-gray-400'>
+
+                  {/* Company Name */}
+                  <span className='text-xl lg:text-sm text-gray-400'>
                     {item.companyName}
-                  </div>
+                  </span>
                 </button>
               ))}
             </div>
